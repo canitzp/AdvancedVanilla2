@@ -1,0 +1,16 @@
+[
+{
+  "modid": "advancedvanilla",
+  "name": "AdvancedVanilla",
+  "description": "This Mod is in early alpha developement.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["canitzp"],
+  "credits": "The Minecraft Forge Team, Mojang, canitzp, Ellpeck (ActuallyAdditions)",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
