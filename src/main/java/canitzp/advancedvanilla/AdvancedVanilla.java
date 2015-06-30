@@ -43,7 +43,7 @@ public class AdvancedVanilla {
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event){
-        logger.info("PostInitialisation");
+        logger.info("PostInitialisation ");
         logger.info("Loading " + AVStrings.name+ " has completed!");
     }
 
