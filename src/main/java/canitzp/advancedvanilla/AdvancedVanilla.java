@@ -26,7 +26,7 @@ public class AdvancedVanilla {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        logger.info("PreInitialisation");
+        logger.info("PreInitialization");
         BlockRegistry.BlockRegistry();
         ItemRegistry.ItemRegistry();
         proxy.registerTileEntities();
@@ -36,14 +36,14 @@ public class AdvancedVanilla {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        logger.info("Initialisation");
+        logger.info("Initialization");
         ReceipeRegistry.ReceipeRegistryInit();
 
 
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event){
-        logger.info("PostInitialisation ");
+        logger.info("PostInitialization ");
         logger.info("Loading " + AVStrings.name+ " has completed!");
     }
 
