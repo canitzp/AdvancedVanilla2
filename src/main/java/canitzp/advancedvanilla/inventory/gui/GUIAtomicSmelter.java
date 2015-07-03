@@ -21,9 +21,5 @@ public class GUIAtomicSmelter extends GuiContainer {
         this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize + 1, this.ySize + 1);
     }
 
-    @Override
-    protected void mouseMovedOrUp(int x, int y, int which){
 
-
-    }
 }

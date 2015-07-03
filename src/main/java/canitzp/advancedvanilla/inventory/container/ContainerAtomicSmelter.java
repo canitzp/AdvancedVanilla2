@@ -52,10 +52,6 @@ public class ContainerAtomicSmelter extends GenericContainer {
             super(inventory, id, x, y);
         }
 
-        @Override
-        public void onSlotChanged() {
-        super.onSlotChanged();
-        }
 
         @Override
         public boolean isItemValid(ItemStack stack) {

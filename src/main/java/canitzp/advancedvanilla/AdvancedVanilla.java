@@ -45,6 +45,7 @@ public class AdvancedVanilla {
         logger.info("Initialization");
         ReceipeRegistry.ReceipeRegistryInit();
 
+
         logger.info("Initialization completed");
     }
     @EventHandler

@@ -2,9 +2,11 @@ package canitzp.advancedvanilla.compat.integrations;
 
 
 import canitzp.advancedvanilla.util.AVStrings;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -55,6 +57,11 @@ public class MineFactroyReloaded {
         OreDictionary.registerOre("treeLeaves", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.leaves"), 1, 1));
 
 
-        logger.info("Loaded MineFactoryReloaded Module without Problems.");
+        //Crafting Receips:
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Block.getBlockFromName("MineFactoryReloaded:road"), 4, 1), "A A", " B ", "A A", 'A', (new ItemStack(Block.getBlockFromName("MineFactoryReloaded:road"), 1, 0)), 'B', "poweredLamp"));
+
+
+
+        logger.info("Loaded Minefactory Reloaded Module without Problems.");
     }
 }

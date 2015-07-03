@@ -2,7 +2,9 @@ package canitzp.advancedvanilla.compat;
 
 
 import canitzp.advancedvanilla.compat.integrations.AE2;
+import canitzp.advancedvanilla.compat.integrations.ActuallyAdditions;
 import canitzp.advancedvanilla.compat.integrations.MineFactroyReloaded;
+import canitzp.advancedvanilla.compat.integrations.ThermalExpansion;
 import canitzp.advancedvanilla.registry.ConfigRegistry;
 import cpw.mods.fml.common.Loader;
 import net.minecraft.init.Blocks;
@@ -18,10 +20,13 @@ public class ExtraOreDictionary {
         OreDictionary.registerOre("blockPillarQuartz", new ItemStack(Blocks.quartz_block, 1, 2));
         OreDictionary.registerOre("blockBricks", Blocks.brick_block);
         OreDictionary.registerOre("bucketLava", Items.lava_bucket);
+        OreDictionary.registerOre("poweredLamp", Blocks.redstone_lamp);
 
         //Mods
         if(Loader.isModLoaded("appliedenergistics2") && ConfigRegistry.AE2OreDictIntegrationEnabled) AE2.AE2();
         if(Loader.isModLoaded("MineFactoryReloaded") && ConfigRegistry.MFROreDictIntegrationEnabled) MineFactroyReloaded.MineFactroyReloaded();
+        if(Loader.isModLoaded("ActuallyAdditions")) ActuallyAdditions.ActuallyAdditions();
+        if(Loader.isModLoaded("ThermalExpansion")) ThermalExpansion.ThermalExpansion();
 
 
 

@@ -12,9 +12,14 @@ public class AE2 {
     public static void AE2(){
         Logger logger = LogManager.getLogger(AVStrings.name + " Integration Module");
 
+        //Quartz Blocks:
         OreDictionary.registerOre("blockQuartz", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartz")));
         OreDictionary.registerOre("blockChiseledQuartz", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartzChiseled")));
         OreDictionary.registerOre("blockPillarQuartz", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartzPillar")));
+
+        //Glass:
+        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartzGlass")));
+        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartzLamp")));
 
         logger.info("Loaded Applied Energistics 2 Module without Problems.");
     }
