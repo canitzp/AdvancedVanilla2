@@ -1,8 +1,10 @@
 package canitzp.advancedvanilla;
 
+import canitzp.advancedvanilla.compat.ExtraOreDictionary;
 import canitzp.advancedvanilla.inventory.GUIHandler;
 import canitzp.advancedvanilla.proxy.CommonProxy;
 import canitzp.advancedvanilla.registry.BlockRegistry;
+import canitzp.advancedvanilla.registry.ConfigRegistry;
 import canitzp.advancedvanilla.registry.ItemRegistry;
 import canitzp.advancedvanilla.registry.ReceipeRegistry;
 import canitzp.advancedvanilla.util.AVStrings;
@@ -27,10 +29,14 @@ public class AdvancedVanilla {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger.info("PreInitialization");
+        ConfigRegistry.ConfigRegistry(event);
         BlockRegistry.BlockRegistry();
         ItemRegistry.ItemRegistry();
         proxy.registerTileEntities();
         NetworkRegistry.INSTANCE.registerGuiHandler(AVStrings.modid, new GUIHandler());
+
+
+        logger.info("PreInitialization completed");
     }
 
 
@@ -39,11 +45,12 @@ public class AdvancedVanilla {
         logger.info("Initialization");
         ReceipeRegistry.ReceipeRegistryInit();
 
-
+        logger.info("Initialization completed");
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event){
-        logger.info("PostInitialization ");
+        logger.info("PostInitialization");
+        ExtraOreDictionary.ExtraOreDictionary();
         logger.info("Loading " + AVStrings.name+ " has completed!");
     }
 

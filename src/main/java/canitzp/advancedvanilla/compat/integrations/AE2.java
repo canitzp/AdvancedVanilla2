@@ -1,0 +1,21 @@
+package canitzp.advancedvanilla.compat.integrations;
+
+
+import canitzp.advancedvanilla.util.AVStrings;
+import net.minecraft.block.Block;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class AE2 {
+    public static void AE2(){
+        Logger logger = LogManager.getLogger(AVStrings.name + " Integration Module");
+
+        OreDictionary.registerOre("blockQuartz", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartz")));
+        OreDictionary.registerOre("blockChiseledQuartz", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartzChiseled")));
+        OreDictionary.registerOre("blockPillarQuartz", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartzPillar")));
+
+        logger.info("Loaded Applied Energistics 2 Module without Problems.");
+    }
+}

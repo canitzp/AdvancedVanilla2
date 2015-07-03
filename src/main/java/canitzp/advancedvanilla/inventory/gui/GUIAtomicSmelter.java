@@ -11,7 +11,7 @@ public class GUIAtomicSmelter extends GuiContainer {
     public GUIAtomicSmelter(Container p_i1072_1_) {
         super(p_i1072_1_);
         this.xSize = 175;
-        this.ySize = 149;
+        this.ySize = 159;
     }
 
     @Override
@@ -19,5 +19,11 @@ public class GUIAtomicSmelter extends GuiContainer {
         GL11.glColor4f(1, 1, 1, 1);
         this.mc.getTextureManager().bindTexture(new ResourceLocation(AVStrings.textureGui + "guiAtomicSmelter.png"));
         this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize + 1, this.ySize + 1);
+    }
+
+    @Override
+    protected void mouseMovedOrUp(int x, int y, int which){
+
+
     }
 }

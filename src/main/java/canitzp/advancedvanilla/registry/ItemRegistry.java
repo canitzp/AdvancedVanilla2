@@ -9,6 +9,8 @@ public class ItemRegistry {
     public static void ItemRegistry(){
         itemCalculator = new ItemCalculator("itemCalculator", 1);
 
-        GameRegistry.registerItem(itemCalculator, "itemCalculator");
+
+
+        AVGameRegistry.ItemGameRegistry();
     }
 }
