@@ -18,7 +18,7 @@ public class GUIHandler implements IGuiHandler{
         }
         if (ID == 1) {
             TileEntityAtomicSmelter te = (TileEntityAtomicSmelter) world.getTileEntity(x, y, z);
-            return new ContainerAtomicSmelter(6, true, player.inventory, te);
+            return new ContainerAtomicSmelter(player.inventory, te);
         }
         return null;
     }
@@ -30,7 +30,7 @@ public class GUIHandler implements IGuiHandler{
         }
         if (ID == 1) {
             TileEntityAtomicSmelter te = (TileEntityAtomicSmelter) world.getTileEntity(x, y, z);
-            return new GUIAtomicSmelter(new ContainerAtomicSmelter(6, true, player.inventory, te));
+            return new GUIAtomicSmelter(player.inventory, te);
         }
         return null;
     }

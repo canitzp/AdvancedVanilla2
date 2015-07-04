@@ -1,9 +1,12 @@
 package canitzp.advancedvanilla.compat.integrations;
 
 
+import canitzp.advancedvanilla.util.AVItem;
+import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVStrings;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
@@ -12,7 +15,6 @@ import org.apache.logging.log4j.Logger;
 
 public class MineFactroyReloaded {
     public static void MineFactroyReloaded(){
-        Logger logger = LogManager.getLogger(AVStrings.name + " Integration Module");
 
         //Bricks Blocks:
         OreDictionary.registerOre("blockBricks", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:brick"), 1, 0));
@@ -62,6 +64,6 @@ public class MineFactroyReloaded {
 
 
 
-        logger.info("Loaded Minefactory Reloaded Module without Problems.");
+        AVLogger.moduleLogger.info("Loaded Minefactory Reloaded Module without Problems.");
     }
 }

@@ -2,20 +2,15 @@ package canitzp.advancedvanilla.compat.integrations;
 
 
 import canitzp.advancedvanilla.util.AVItem;
-import canitzp.advancedvanilla.util.AVStrings;
-import cpw.mods.fml.common.Loader;
+import canitzp.advancedvanilla.util.AVLogger;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class ActuallyAdditions {
     public static void ActuallyAdditions(){
-        Logger logger = LogManager.getLogger(AVStrings.name + " Integration Module");
 
         //MachineBlock:
         OreDictionary.registerOre("blockWoodMachineBlock", new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockMisc"), 1, 4));
@@ -40,15 +35,24 @@ public class ActuallyAdditions {
         OreDictionary.registerOre("poweredLamp", new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockColoredLamp"), 1, 14));
         OreDictionary.registerOre("poweredLamp", new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockColoredLamp"), 1, 15));
 
+        //Buckets:
+        OreDictionary.registerOre("bucketOil", new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemBucketOil"), 1, 0));
+
+        //Coils:
+        OreDictionary.registerOre("coilAdvanced", new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemMisc"), 1, 8));
+
 
         //Crafting Receipes:
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockCompost")), "W W", "W W", "WCW", 'W', "plankWood", 'C', "blockWoodMachineBlock"));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockCompost")), "A A", "A A", "ABA", 'A', "plankWood", 'B', "blockWoodMachineBlock"));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockCanolaPress")), "ABA", "ACA", "ADA", 'A', "cobblestone", 'B', "blockHopper", 'C', (new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemMisc"),1 , 13)), 'D', "coilAdvanced"));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockFermentingBarrel")), "ABA", "ACA", "ADA", 'A', "logWood", 'B', "blockHopper", 'C', (new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemMisc"),1 , 13)), 'D', "blockWoodMachineBlock"));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockInputter")), "AAA", "BCB", "AAA", 'A', "plankWood", 'B', "blockWoodMachineBlock", 'C', "blockHopper"));
 
         //Battery:
         OreDictionary.registerOre("itemBattery", new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemBattery"), 1, 0));
 
 
-        logger.info("Loaded ActuallyAdditions Module without Problems.");
+        AVLogger.moduleLogger.info("Loaded ActuallyAdditions Module without Problems.");
     }
 
 

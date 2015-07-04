@@ -27,6 +27,14 @@ public class ThermalExpansion {
         OreDictionary.registerOre("blockMachineBlockReinforced", new ItemStack(Block.getBlockFromName("ThermalExpansion:Frame"), 1, 2));
         OreDictionary.registerOre("blockMachineBlockResonant", new ItemStack(Block.getBlockFromName("ThermalExpansion:Frame"), 1, 3));
 
+        //Sponges:
+        OreDictionary.registerOre("blockSponge", new ItemStack(Block.getBlockFromName("ThermalExpansion:Sponge"), 1, 0));
+        OreDictionary.registerOre("blockSponge", new ItemStack(Block.getBlockFromName("ThermalExpansion:Sponge"), 1, 1));
+        OreDictionary.registerOre("blockSponge", new ItemStack(Block.getBlockFromName("ThermalExpansion:Sponge"), 1, 2));
+
+        //Coils:
+        OreDictionary.registerOre("coilAdvanced", new ItemStack(AVItem.getItemFromName("ThermalExpansion:material"), 1, 3));
+
         //Crafting Receipes:
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(AVItem.getItemFromName("ThermalExpansion:capacitor"),1 , 4), " A ", "BCB", "ADA", 'A', "dustRedstone", 'B', "ingotElectrum", 'C', "itemBattery", 'D', "gemDiamond"));
 

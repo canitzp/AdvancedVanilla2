@@ -1,15 +1,18 @@
 package canitzp.advancedvanilla.inventory.gui;
 
+import canitzp.advancedvanilla.inventory.container.ContainerAtomicSmelter;
+import canitzp.advancedvanilla.tileEntity.TileEntityAtomicSmelter;
 import canitzp.advancedvanilla.util.AVStrings;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 
 public class GUIAtomicSmelter extends GuiContainer {
-    public GUIAtomicSmelter(Container p_i1072_1_) {
-        super(p_i1072_1_);
+    public GUIAtomicSmelter(InventoryPlayer invPlayer, TileEntityAtomicSmelter te) {
+        super(new ContainerAtomicSmelter(invPlayer, te));
         this.xSize = 175;
         this.ySize = 159;
     }

@@ -1,33 +1,32 @@
 package canitzp.advancedvanilla.tileEntity;
 
+import canitzp.advancedvanilla.receipes.AtomicSmelterReceipes;
+import cofh.api.energy.EnergyStorage;
+import cofh.api.energy.IEnergyReceiver;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.inventory.Slot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.common.util.ForgeDirection;
 
 
-public class TileEntityAtomicSmelter extends TileEntity implements ISidedInventory {
+public class TileEntityAtomicSmelter extends TileEntity implements ISidedInventory,IEnergyReceiver {
 
-    public int slot = 6;
+
     public String name = "TileEntityAtomicSmelter";
     public int stackLimit = 64;
     public boolean playerUsable = true;
-    public ItemStack slots[];
-
-    public TileEntityAtomicSmelter() {
-        this.initializeSlots(slot);
-    }
-
-    public void initializeSlots(int itemAmount) {
-        this.slots = new ItemStack[itemAmount];
-    }
-
-
+    public ItemStack[] slots = new ItemStack[6];
+    public EnergyStorage eStorage = new EnergyStorage(100000);
+    public int workTime = 0;
 
     @Override
     public int[] getAccessibleSlotsFromSide(int i) {
-        return new int[slot];
+        return new int[i];
     }
 
     @Override
@@ -47,29 +46,40 @@ public class TileEntityAtomicSmelter extends TileEntity implements ISidedInvento
 
     @Override
     public ItemStack getStackInSlot(int i) {
+
         return slots[i];
     }
 
     @Override
     public ItemStack decrStackSize(int i, int j) {
-        if (slots[i] != null) {
-            ItemStack stackAt;
+        if (this.slots[i] != null)
+        {
+            ItemStack itemstack;
 
-            if (slots[i].stackSize <= j) {
-                stackAt = slots[i];
-                slots[i] = null;
+            if (this.slots[i].stackSize <= j)
+            {
+                itemstack = this.slots[i];
+                this.slots[i] = null;
+                this.markDirty();
+                return itemstack;
+            }
+            else
+            {
+                itemstack = this.slots[i].splitStack(j);
 
+                if (this.slots[i].stackSize == 0)
+                {
+                    this.slots[i] = null;
+                }
 
                 this.markDirty();
-                return stackAt;
-            } else {
-                stackAt = slots[i].splitStack(j);
-                if (slots[i].stackSize == 0) slots[i] = null;
-                this.markDirty();
-                return stackAt;
+                return itemstack;
             }
         }
-        return null;
+        else
+        {
+            return null;
+        }
     }
 
     @Override
@@ -80,6 +90,12 @@ public class TileEntityAtomicSmelter extends TileEntity implements ISidedInvento
     @Override
     public void setInventorySlotContents(int i, ItemStack stack) {
         this.slots[i] = stack;
+
+        if (stack != null && stack.stackSize > this.getInventoryStackLimit())
+        {
+            stack.stackSize = this.getInventoryStackLimit();
+        }
+
         this.markDirty();
     }
 
@@ -95,14 +111,14 @@ public class TileEntityAtomicSmelter extends TileEntity implements ISidedInvento
 
     @Override
     public int getInventoryStackLimit() {
-        return stackLimit;
+        return 64;
     }
 
 
 
     @Override
     public boolean isUseableByPlayer(EntityPlayer p_70300_1_) {
-        return playerUsable;
+        return true;
     }
 
     @Override
@@ -117,14 +133,90 @@ public class TileEntityAtomicSmelter extends TileEntity implements ISidedInvento
 
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack) {
-        return false;
+        return true;
     }
 
     public void writeToNBT(NBTTagCompound nbt) {
+
+        NBTTagList nbttaglist = new NBTTagList();
+
+        for (int i = 0; i < this.slots.length; ++i)
+        {
+            if (this.slots[i] != null)
+            {
+                NBTTagCompound nbttagcompound1 = new NBTTagCompound();
+                nbttagcompound1.setByte("Slot", (byte)i);
+                this.slots[i].writeToNBT(nbttagcompound1);
+                nbttaglist.appendTag(nbttagcompound1);
+            }
+        }
+        nbt.setTag("Items", nbttaglist);
+
+        this.eStorage.writeToNBT(nbt);
         super.writeToNBT(nbt);
     }
 
     public void readFromNBT(NBTTagCompound nbt) {
+
+        NBTTagList nbttaglist = nbt.getTagList("Items", 10);
+        this.slots = new ItemStack[this.getSizeInventory()];
+
+
+        for (int i = 0; i < nbttaglist.tagCount(); ++i)
+        {
+            NBTTagCompound nbttagcompound1 = nbttaglist.getCompoundTagAt(i);
+            int j = nbttagcompound1.getByte("Slot") & 255;
+
+            if (j >= 0 && j < this.slots.length)
+            {
+                this.slots[j] = ItemStack.loadItemStackFromNBT(nbttagcompound1);
+            }
+        }
+
+        this.eStorage.readFromNBT(nbt);
         super.readFromNBT(nbt);
+    }
+
+
+
+
+    //Energy:
+    @Override
+    public int receiveEnergy(ForgeDirection from, int maxReceive, boolean simulate) {
+        return this.eStorage.receiveEnergy(maxReceive, simulate);
+    }
+
+    @Override
+    public int getEnergyStored(ForgeDirection from) {
+        return this.eStorage.getEnergyStored();
+    }
+
+    @Override
+    public int getMaxEnergyStored(ForgeDirection from) {
+        return this.eStorage.getMaxEnergyStored();
+    }
+
+    @Override
+    public boolean canConnectEnergy(ForgeDirection from) {
+        return true;
+    }
+
+
+
+    //Brew:
+    @Override
+    public void updateEntity(){
+        if(!worldObj.isRemote){
+            if(workTime == 0 && eStorage.getEnergyStored() != 0){
+                this.work();
+            }
+        }
+    }
+    public void work(){
+        ItemStack[] isarray = AtomicSmelterReceipes.getOutputsFromInput(new ItemStack[]{slots[1], slots[2], slots[3], slots[4], slots[5]});
+        for (int i = 0; i < (isarray != null ? Math.min(5, isarray.length) : 5); i++) {
+            if (isarray != null) isarray[i].stackSize = slots[0].stackSize;
+            this.slots[i + 1] = isarray != null ? isarray[i].copy() : null;
+        }
     }
 }

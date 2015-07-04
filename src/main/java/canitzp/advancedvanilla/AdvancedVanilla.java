@@ -3,10 +3,12 @@ package canitzp.advancedvanilla;
 import canitzp.advancedvanilla.compat.ExtraOreDictionary;
 import canitzp.advancedvanilla.inventory.GUIHandler;
 import canitzp.advancedvanilla.proxy.CommonProxy;
+import canitzp.advancedvanilla.receipes.AtomicSmelterReceipes;
 import canitzp.advancedvanilla.registry.BlockRegistry;
 import canitzp.advancedvanilla.registry.ConfigRegistry;
 import canitzp.advancedvanilla.registry.ItemRegistry;
 import canitzp.advancedvanilla.registry.ReceipeRegistry;
+import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVStrings;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -15,8 +17,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mod(modid = AVStrings.modid, version = AVStrings.version, name = AVStrings.name)
 
@@ -24,11 +24,11 @@ import org.apache.logging.log4j.Logger;
 public class AdvancedVanilla {
     @SidedProxy(clientSide = AVStrings.clientSidedProxy, serverSide = AVStrings.serverSidedProxy)
     public static CommonProxy proxy;
-    Logger logger = LogManager.getLogger(AVStrings.name);
+
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        logger.info("PreInitialization");
+        AVLogger.logger.info("PreInitialization");
         ConfigRegistry.ConfigRegistry(event);
         BlockRegistry.BlockRegistry();
         ItemRegistry.ItemRegistry();
@@ -36,23 +36,24 @@ public class AdvancedVanilla {
         NetworkRegistry.INSTANCE.registerGuiHandler(AVStrings.modid, new GUIHandler());
 
 
-        logger.info("PreInitialization completed");
+        AVLogger.logger.info("PreInitialization completed");
     }
 
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        logger.info("Initialization");
+        AVLogger.logger.info("Initialization");
         ReceipeRegistry.ReceipeRegistryInit();
+        AtomicSmelterReceipes.init();
 
 
-        logger.info("Initialization completed");
+        AVLogger.logger.info("Initialization completed");
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event){
-        logger.info("PostInitialization");
+        AVLogger.logger.info("PostInitialization");
         ExtraOreDictionary.ExtraOreDictionary();
-        logger.info("Loading " + AVStrings.name+ " has completed!");
+        AVLogger.logger.info("Loading " + AVStrings.name + " has completed!");
     }
 
 

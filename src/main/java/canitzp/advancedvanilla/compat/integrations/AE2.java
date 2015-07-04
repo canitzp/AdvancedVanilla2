@@ -1,6 +1,7 @@
 package canitzp.advancedvanilla.compat.integrations;
 
 
+import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVStrings;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
@@ -10,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 
 public class AE2 {
     public static void AE2(){
-        Logger logger = LogManager.getLogger(AVStrings.name + " Integration Module");
+
 
         //Quartz Blocks:
         OreDictionary.registerOre("blockQuartz", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartz")));
@@ -21,6 +22,6 @@ public class AE2 {
         OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartzGlass")));
         OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartzLamp")));
 
-        logger.info("Loaded Applied Energistics 2 Module without Problems.");
+        AVLogger.moduleLogger.info("Loaded Applied Energistics 2 Module without Problems.");
     }
 }
