@@ -3,7 +3,7 @@ package canitzp.advancedvanilla.util;
 
 import net.minecraft.item.Item;
 
-public class AVItem {
+public class AVItem{
     public static Item getItemFromName(String name)
     {
         if (Item.itemRegistry.containsKey(name))

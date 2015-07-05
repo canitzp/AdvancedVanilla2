@@ -21,14 +21,14 @@ public class ExtraOreDictionary {
         OreDictionary.registerOre("blockSponge", Blocks.sponge);
 
         //Mods
-        if(Loader.isModLoaded("appliedenergistics2") && ConfigRegistry.AE2OreDictIntegrationEnabled) AE2.AE2();
-        if(Loader.isModLoaded("MineFactoryReloaded") && ConfigRegistry.MFROreDictIntegrationEnabled) MineFactroyReloaded.MineFactroyReloaded();
-        if(Loader.isModLoaded("ActuallyAdditions") && ConfigRegistry.ActuallyAdditionsOreDictIntegrationEnabled) ActuallyAdditions.ActuallyAdditions();
-        if(Loader.isModLoaded("ThermalExpansion") && ConfigRegistry.ThermalExpansionOreDictIntegrationEnabled) ThermalExpansion.ThermalExpansion();
-        if(Loader.isModLoaded("EnderIO") && ConfigRegistry.EnderIOOreDictIntegrationEnabled) EnderIO.EnderIO();
-        if(Loader.isModLoaded("IC2")) IC2.IC2();
-        if(Loader.isModLoaded("BuildCraft|Core") && Loader.isModLoaded("BuildCraft|Energy") && Loader.isModLoaded("BuildCraft|Builders") && Loader.isModLoaded("BuildCraft|Factory") && Loader.isModLoaded("BuildCraft|Robotics") && Loader.isModLoaded("BuildCraft|Silicon") && Loader.isModLoaded("BuildCraft|Transport")) Buildcraft.Buildcraft();
-
+        if(Loader.isModLoaded("appliedenergistics2") && ConfigRegistry.AE2Integration) AE2.AE2();
+        if(Loader.isModLoaded("MineFactoryReloaded") && ConfigRegistry.MFRIntegration) MineFactroyReloaded.MineFactroyReloaded();
+        if(Loader.isModLoaded("ActuallyAdditions") && ConfigRegistry.ActuallyAdditionsIntegration) ActuallyAdditions.init();
+        if(Loader.isModLoaded("ThermalExpansion") && ConfigRegistry.ThermalExpansionIntegration) ThermalExpansion.ThermalExpansion();
+        if(Loader.isModLoaded("EnderIO") && ConfigRegistry.EnderIOIntegration) EnderIO.EnderIO();
+        if(Loader.isModLoaded("IC2") && ConfigRegistry.IC2Integration) IC2.init();
+        if(Loader.isModLoaded("BuildCraft|Core") && Loader.isModLoaded("BuildCraft|Energy") && Loader.isModLoaded("BuildCraft|Builders") && Loader.isModLoaded("BuildCraft|Factory") && Loader.isModLoaded("BuildCraft|Robotics") && Loader.isModLoaded("BuildCraft|Silicon") && Loader.isModLoaded("BuildCraft|Transport") && ConfigRegistry.BuildCraftIntegration) Buildcraft.Buildcraft();
+        if(Loader.isModLoaded("Forestry") && ConfigRegistry.ForestryIntegration) Forestry.init();
 
 
     }

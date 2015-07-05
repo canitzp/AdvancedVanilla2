@@ -29,6 +29,7 @@ public class AdvancedVanilla {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         AVLogger.logger.info("PreInitialization");
+        AVLogger.logger.info("Thanks for using " + AVStrings.name + "!");
         ConfigRegistry.ConfigRegistry(event);
         BlockRegistry.BlockRegistry();
         ItemRegistry.ItemRegistry();

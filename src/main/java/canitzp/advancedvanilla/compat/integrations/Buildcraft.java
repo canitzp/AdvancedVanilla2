@@ -16,6 +16,6 @@ public class Buildcraft {
         //Buckets:
         OreDictionary.registerOre("bucketOil", new ItemStack(AVItem.getItemFromName("BuildCraft|Energy:bucketOil"), 1, 0));
 
-        AVLogger.moduleLogger.info("Loaded BuildCraft Module without Problems.");
+        AVLogger.AVinfo("BuildCraft");
     }
 }

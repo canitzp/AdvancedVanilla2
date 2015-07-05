@@ -24,6 +24,6 @@ public class EnderIO {
         OreDictionary.registerOre("blockMachineBlock", new ItemStack(AVItem.getItemFromName("EnderIO:itemMachinePart"), 1, 0));
         OreDictionary.registerOre("gearStone", new ItemStack(AVItem.getItemFromName("EnderIO:itemMachinePart"), 1, 1));
 
-        AVLogger.moduleLogger.info("Loaded EnderIO Module without Problems.");
+        AVLogger.AVinfo("EnderIO");
     }
 }

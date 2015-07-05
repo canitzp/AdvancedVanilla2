@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class IC2 {
-    public static void IC2(){
+    public static void init(){
 
         //Machine Block:
         OreDictionary.registerOre("blockMachineBlock", new ItemStack(Block.getBlockFromName("IC2:blockMachine"), 1, 0));
@@ -30,6 +30,6 @@ public class IC2 {
 
 
 
-        AVLogger.moduleLogger.info("Loaded IndustrialCraft 2 Module without Problems.");
+        AVLogger.AVinfo("IndustrialCraft");
     }
 }

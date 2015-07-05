@@ -22,6 +22,6 @@ public class AE2 {
         OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartzGlass")));
         OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("appliedenergistics2:tile.BlockQuartzLamp")));
 
-        AVLogger.moduleLogger.info("Loaded Applied Energistics 2 Module without Problems.");
+        AVLogger.AVinfo("Applied Energistics 2");
     }
 }

@@ -10,7 +10,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class ActuallyAdditions {
-    public static void ActuallyAdditions(){
+    public static void init(){
 
         //MachineBlock:
         OreDictionary.registerOre("blockWoodMachineBlock", new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockMisc"), 1, 4));
@@ -52,7 +52,7 @@ public class ActuallyAdditions {
         OreDictionary.registerOre("itemBattery", new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemBattery"), 1, 0));
 
 
-        AVLogger.moduleLogger.info("Loaded ActuallyAdditions Module without Problems.");
+        AVLogger.AVinfo("ActuallyAdditions");
     }
 
 

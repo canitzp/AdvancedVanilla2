@@ -1,17 +1,12 @@
 package canitzp.advancedvanilla.compat.integrations;
 
 
-import canitzp.advancedvanilla.util.AVItem;
 import canitzp.advancedvanilla.util.AVLogger;
-import canitzp.advancedvanilla.util.AVStrings;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class MineFactroyReloaded {
     public static void MineFactroyReloaded(){
@@ -64,6 +59,6 @@ public class MineFactroyReloaded {
 
 
 
-        AVLogger.moduleLogger.info("Loaded Minefactory Reloaded Module without Problems.");
+        AVLogger.AVinfo("Minefactory Reloaded");
     }
 }
