@@ -19,6 +19,7 @@ public class ExtraOreDictionary {
         OreDictionary.registerOre("bucketLava", Items.lava_bucket);
         OreDictionary.registerOre("poweredLamp", Blocks.redstone_lamp);
         OreDictionary.registerOre("blockSponge", Blocks.sponge);
+        OreDictionary.registerOre("blockGrass", Blocks.grass);
 
         //Mods
         if(Loader.isModLoaded("appliedenergistics2") && ConfigRegistry.AE2Integration) AE2.init();
@@ -29,6 +30,7 @@ public class ExtraOreDictionary {
         if(Loader.isModLoaded("IC2") && ConfigRegistry.IC2Integration) IC2.init();
         if(Loader.isModLoaded("BuildCraft|Core") && Loader.isModLoaded("BuildCraft|Energy") && Loader.isModLoaded("BuildCraft|Builders") && Loader.isModLoaded("BuildCraft|Factory") && Loader.isModLoaded("BuildCraft|Robotics") && Loader.isModLoaded("BuildCraft|Silicon") && Loader.isModLoaded("BuildCraft|Transport") && ConfigRegistry.BuildCraftIntegration) Buildcraft.init();
         if(Loader.isModLoaded("Forestry") && ConfigRegistry.ForestryIntegration) Forestry.init();
+        if(Loader.isModLoaded("ExtraUtilities")) ExtraUtilities.init();
 
 
     }

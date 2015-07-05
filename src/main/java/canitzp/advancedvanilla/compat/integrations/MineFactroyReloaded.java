@@ -46,10 +46,8 @@ public class MineFactroyReloaded {
         OreDictionary.registerOre("treeSapling", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.sapling"), 1, 1));
         OreDictionary.registerOre("treeSapling", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.sapling"), 1, 2));
         OreDictionary.registerOre("treeSapling", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.sapling"), 1, 3));
-
         OreDictionary.registerOre("logWood", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.log"), 1, 0));
         OreDictionary.registerOre("logWood", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.log"), 1, 1));
-
         OreDictionary.registerOre("treeLeaves", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.leaves"), 1, 0));
         OreDictionary.registerOre("treeLeaves", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.leaves"), 1, 1));
 
