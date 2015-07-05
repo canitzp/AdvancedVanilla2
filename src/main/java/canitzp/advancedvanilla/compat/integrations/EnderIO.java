@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class EnderIO {
-    public static void EnderIO(){
+    public static void init(){
 
         //Glass:
         OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("EnderIO:blockFusedQuartz"), 1, 0));

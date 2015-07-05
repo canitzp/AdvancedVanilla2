@@ -10,6 +10,7 @@ import canitzp.advancedvanilla.registry.ItemRegistry;
 import canitzp.advancedvanilla.registry.ReceipeRegistry;
 import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVStrings;
+import canitzp.advancedvanilla.worldGen.AASHHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -35,7 +36,6 @@ public class AdvancedVanilla {
         ItemRegistry.ItemRegistry();
         proxy.registerTileEntities();
         NetworkRegistry.INSTANCE.registerGuiHandler(AVStrings.modid, new GUIHandler());
-
 
         AVLogger.logger.info("PreInitialization completed");
     }

@@ -13,7 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ThermalExpansion {
-    public static void ThermalExpansion(){
+    public static void init(){
 
         //Flux Capacitor:
         OreDictionary.registerOre("itemBatteryLow", new ItemStack(AVItem.getItemFromName("ThermalExpansion:capacitor"), 1, 2));

@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class Buildcraft {
-    public static void Buildcraft(){
+    public static void init(){
 
         //Chute:
         OreDictionary.registerOre("blockHopper", new ItemStack(Block.getBlockFromName("BuildCraft|Factory:blockHopper"), 1, 0));

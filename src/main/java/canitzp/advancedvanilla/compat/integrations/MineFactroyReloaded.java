@@ -9,7 +9,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class MineFactroyReloaded {
-    public static void MineFactroyReloaded(){
+    public static void init(){
 
         //Bricks Blocks:
         OreDictionary.registerOre("blockBricks", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:brick"), 1, 0));

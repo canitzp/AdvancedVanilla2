@@ -10,7 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class AE2 {
-    public static void AE2(){
+    public static void init(){
 
 
         //Quartz Blocks:
