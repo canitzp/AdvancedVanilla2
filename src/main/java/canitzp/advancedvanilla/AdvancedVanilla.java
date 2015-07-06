@@ -1,6 +1,6 @@
 package canitzp.advancedvanilla;
 
-import canitzp.advancedvanilla.compat.ExtraOreDictionary;
+import canitzp.advancedvanilla.compat.Integration;
 import canitzp.advancedvanilla.inventory.GUIHandler;
 import canitzp.advancedvanilla.proxy.CommonProxy;
 import canitzp.advancedvanilla.receipes.AtomicSmelterReceipes;
@@ -10,7 +10,6 @@ import canitzp.advancedvanilla.registry.ItemRegistry;
 import canitzp.advancedvanilla.registry.ReceipeRegistry;
 import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVStrings;
-import canitzp.advancedvanilla.worldGen.AASHHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -53,7 +52,7 @@ public class AdvancedVanilla {
     @EventHandler
     public void postInit(FMLPostInitializationEvent event){
         AVLogger.logger.info("PostInitialization");
-        ExtraOreDictionary.ExtraOreDictionary();
+        Integration.ExtraOreDictionary();
         AVLogger.logger.info("Loading " + AVStrings.name + " has completed!");
     }
 
