@@ -1,20 +1,17 @@
 package canitzp.advancedvanilla.compat.integrations;
 
 
-import canitzp.advancedvanilla.util.AVItem;
 import canitzp.advancedvanilla.util.AVLogger;
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
+import canitzp.advancedvanilla.util.AVOreDictionary;
 
 public class Buildcraft {
     public static void init(){
 
         //Chute:
-        OreDictionary.registerOre("blockHopper", new ItemStack(Block.getBlockFromName("BuildCraft|Factory:blockHopper"), 1, 0));
+        AVOreDictionary.AVODBlock("blockHopper", "BuildCraft|Factory:blockHopper");
 
         //Buckets:
-        OreDictionary.registerOre("bucketOil", new ItemStack(AVItem.getItemFromName("BuildCraft|Energy:bucketOil"), 1, 0));
+        AVOreDictionary.AVODItem("bucketOil", "BuildCraft|Energy:bucketOil");
 
         AVLogger.AVinfo("BuildCraft");
     }

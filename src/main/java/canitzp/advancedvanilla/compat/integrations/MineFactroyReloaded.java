@@ -2,58 +2,31 @@ package canitzp.advancedvanilla.compat.integrations;
 
 
 import canitzp.advancedvanilla.util.AVLogger;
-import cpw.mods.fml.common.registry.GameRegistry;
+import canitzp.advancedvanilla.util.AVOreDictionary;
+import canitzp.advancedvanilla.util.AVReceipe;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class MineFactroyReloaded {
     public static void init(){
 
         //Bricks Blocks:
-        OreDictionary.registerOre("blockBricks", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:brick"), 1, 0));
-        OreDictionary.registerOre("blockBricks", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:brick"), 1, 1));
-        OreDictionary.registerOre("blockBricks", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:brick"), 1, 2));
-        OreDictionary.registerOre("blockBricks", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:brick"), 1, 3));
-        OreDictionary.registerOre("blockBricks", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:brick"), 1, 4));
-        OreDictionary.registerOre("blockBricks", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:brick"), 1, 5));
+        AVOreDictionary.WildcardBlock("blockBricks", "MineFactoryReloaded:brick");
 
         //Conveyor Belts:
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 0));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 1));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 2));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 3));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 4));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 5));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 6));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 7));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 8));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 9));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 10));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 11));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 12));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 13));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 14));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 15));
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:conveyor"), 1, 16));
+        AVOreDictionary.WildcardBlock("blockConveyerBelt", "MineFactoryReloaded:conveyor");
 
         //Machine Block:
-        OreDictionary.registerOre("blockMachineBlock", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:machineblock")));
+        AVOreDictionary.AVODBlock("blockMachineBlock", "MineFactoryReloaded:machineblock");
 
         //Trees:
-        OreDictionary.registerOre("treeSapling", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.sapling"), 1, 0));
-        OreDictionary.registerOre("treeSapling", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.sapling"), 1, 1));
-        OreDictionary.registerOre("treeSapling", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.sapling"), 1, 2));
-        OreDictionary.registerOre("treeSapling", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.sapling"), 1, 3));
-        OreDictionary.registerOre("logWood", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.log"), 1, 0));
-        OreDictionary.registerOre("logWood", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.log"), 1, 1));
-        OreDictionary.registerOre("treeLeaves", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.leaves"), 1, 0));
-        OreDictionary.registerOre("treeLeaves", new ItemStack(Block.getBlockFromName("MineFactoryReloaded:rubberwood.leaves"), 1, 1));
+        AVOreDictionary.WildcardBlock("treeSapling", "MineFactoryReloaded:rubberwood.sapling");
+        AVOreDictionary.WildcardBlock("logWood", "MineFactoryReloaded:rubberwood.log");
+        AVOreDictionary.WildcardBlock("treeLeaves", "MineFactoryReloaded:rubberwood.leaves");
 
 
         //Crafting Receips:
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Block.getBlockFromName("MineFactoryReloaded:road"), 4, 1), "A A", " B ", "A A", 'A', (new ItemStack(Block.getBlockFromName("MineFactoryReloaded:road"), 1, 0)), 'B', "poweredLamp"));
+        AVReceipe.AVODShapedBlock("MineFactoryReloaded:road", "A A", " B ", "A A", 'A', (new ItemStack(Block.getBlockFromName("MineFactoryReloaded:road"), 1, 0)), 'B', "poweredLamp");
 
 
 

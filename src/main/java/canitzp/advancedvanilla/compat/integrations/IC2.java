@@ -1,35 +1,32 @@
 package canitzp.advancedvanilla.compat.integrations;
 
 
-import canitzp.advancedvanilla.util.AVItem;
 import canitzp.advancedvanilla.util.AVLogger;
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
+import canitzp.advancedvanilla.util.AVOreDictionary;
 
 public class IC2 {
     public static void init(){
 
         //Machine Block:
-        OreDictionary.registerOre("blockMachineBlock", new ItemStack(Block.getBlockFromName("IC2:blockMachine"), 1, 0));
+        AVOreDictionary.AVODBlock("blockMachineBlock", "IC2:blockMachine");
 
         //Wood:
-        OreDictionary.registerOre("logWood", new ItemStack(Block.getBlockFromName("IC2:blockRubWood"), 1, 0));
+        AVOreDictionary.AVODBlock("logWood", "IC2:blockRubWood");
 
         //Cobblestone:
-        OreDictionary.registerOre("cobblestone", new ItemStack(Block.getBlockFromName("IC2:blockBasalt"), 1, 0));
+        AVOreDictionary.AVODBlock("cobblestone", "IC2:blockBasalt");
+
 
         //Glass:
-        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("IC2:blockAlloyGlass"), 1, 0));
-        OreDictionary.registerOre("blockGlassHardened", new ItemStack(Block.getBlockFromName("IC2:blockAlloyGlass"), 1, 0));
+        AVOreDictionary.AVODBlock("blockGlass", "IC2:blockAlloyGlass");
+        AVOreDictionary.AVODBlock("blockGlassHardened", "IC2:blockAlloyGlass");
 
         //Iridium:
-        OreDictionary.registerOre("ingotIridium", new ItemStack(AVItem.getItemFromName("IC2:itemOreIridium"), 1, 0));
-        OreDictionary.registerOre("plateIridium", new ItemStack(AVItem.getItemFromName("IC2:itemPartIridium"), 1, 0));
+        AVOreDictionary.AVODItem("ingotIridium", "IC2:itemOreIridium");
+        AVOreDictionary.AVODItem("plateIridium", "IC2:itemPartIridium");
 
 
 
-
-        AVLogger.AVinfo("IndustrialCraft");
+        AVLogger.AVinfo("IndustrialCraft 2");
     }
 }

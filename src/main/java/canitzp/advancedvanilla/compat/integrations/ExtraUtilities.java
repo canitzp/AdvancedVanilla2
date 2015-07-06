@@ -1,40 +1,31 @@
 package canitzp.advancedvanilla.compat.integrations;
 
 
-import canitzp.advancedvanilla.util.AVItem;
 import canitzp.advancedvanilla.util.AVLogger;
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
+import canitzp.advancedvanilla.util.AVOreDictionary;
 
 public class ExtraUtilities {
     public static void init(){
 
         //Conveyer Belt:
-        OreDictionary.registerOre("blockConveyerBelt", new ItemStack(Block.getBlockFromName("ExtraUtilities:conveyor"), 1, 0));
+        AVOreDictionary.AVODBlock("blockConveyerBelt", "ExtraUtilities:conveyor");
 
-        //Cursed Earth:
-        OreDictionary.registerOre("dirt", new ItemStack(Block.getBlockFromName("ExtraUtilities:cursedearthside"), 1, 0));
-        OreDictionary.registerOre("blockGrass", new ItemStack(Block.getBlockFromName("ExtraUtilities:cursedearthside"), 1, 0));
 
         //Glass:
-        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("ExtraUtilities:etherealglass"), 1, 0));
-        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("ExtraUtilities:etherealglass"), 1, 1));
-        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("ExtraUtilities:etherealglass"), 1, 2));
-        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("ExtraUtilities:etherealglass"), 1, 3));
-        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("ExtraUtilities:etherealglass"), 1, 4));
-        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("ExtraUtilities:etherealglass"), 1, 5));
-        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("ExtraUtilities:etherealglass"), 1, 10));
-        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("ExtraUtilities:decorativeBlock2"), 1, 4));
-        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("ExtraUtilities:decorativeBlock2"), 1, 7));
-        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("ExtraUtilities:decorativeBlock2"), 1, 8));
-        OreDictionary.registerOre("blockGlass", new ItemStack(Block.getBlockFromName("ExtraUtilities:decorativeBlock2"), 1, 10));
+        AVOreDictionary.WildcardBlock("blockGlass", "ExtraUtilities:etherealglass");
+        AVOreDictionary.AVODBlock("blockGlass", "ExtraUtilities:decorativeBlock2", 4);
+        AVOreDictionary.AVODBlock("blockGlass", "ExtraUtilities:decorativeBlock2", 7);
+        AVOreDictionary.AVODBlock("blockGlass", "ExtraUtilities:decorativeBlock2", 8);
+        AVOreDictionary.AVODBlock("blockGlass", "ExtraUtilities:decorativeBlock2", 10);
 
-        OreDictionary.registerOre("blockGlassHardened", new ItemStack(Block.getBlockFromName("ExtraUtilities:decorativeBlock2"), 1, 5));
-        OreDictionary.registerOre("blockGlassHardened", new ItemStack(Block.getBlockFromName("ExtraUtilities:decorativeBlock2"), 1, 11));
+        AVOreDictionary.AVODBlock("blockGlassHardened", "ExtraUtilities:decorativeBlock2", 5);
+        AVOreDictionary.AVODBlock("blockGlassHardened", "ExtraUtilities:decorativeBlock2", 11);
+
+
 
         //Ingots:
-        OreDictionary.registerOre("ingotBedrockium", new ItemStack(AVItem.getItemFromName("ExtraUtilities:bedrockiumIngot"), 1, 0));
+        AVOreDictionary.AVODItem("ingotBedrockium", "ExtraUtilities:bedrockiumIngot");
+
 
         AVLogger.AVinfo("ExtraUtilities");
     }
