@@ -1,10 +1,7 @@
 package canitzp.advancedvanilla.compat.integrations;
 
 
-import canitzp.advancedvanilla.util.AVItem;
-import canitzp.advancedvanilla.util.AVLogger;
-import canitzp.advancedvanilla.util.AVOreDictionary;
-import canitzp.advancedvanilla.util.AVReceipe;
+import canitzp.advancedvanilla.util.*;
 import net.minecraft.item.ItemStack;
 
 public class ActuallyAdditions {
@@ -25,10 +22,12 @@ public class ActuallyAdditions {
         AVOreDictionary.AVODItem("coilAdvanced", "ActuallyAdditions:itemMisc", 8);
 
         //Crafting Receipes:
-        AVReceipe.AVODShapedBlock("ActuallyAdditions:blockCompost", "A A", "A A", "ABA", 'A', "plankWood", 'B', "blockWoodMachineBlock");
-        AVReceipe.AVODShapedBlock("ActuallyAdditions:blockCanolaPress", "ABA", "ACA", "ADA", 'A', "cobblestone", 'B', "blockHopper", 'C', (new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemMisc"),1 , 13)), 'D', "coilAdvanced");
-        AVReceipe.AVODShapedBlock("ActuallyAdditions:blockFermentingBarrel", "ABA", "ACA", "ADA", 'A', "logWood", 'B', "blockHopper", 'C', (new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemMisc"), 1, 13)), 'D', "blockWoodMachineBlock");
-        AVReceipe.AVODShapedBlock("ActuallyAdditions:blockInputter", "AAA", "BCB", "AAA", 'A', "plankWood", 'B', "blockWoodMachineBlock", 'C', "blockHopper");
+        AVRecipe.AVODShapedBlock("ActuallyAdditions:blockCompost", 0, "A A", "A A", "ABA", 'A', "plankWood", 'B', "blockWoodMachineBlock");
+        AVRecipe.AVODShapedBlock("ActuallyAdditions:blockCanolaPress", 0, "ABA", "ACA", "ADA", 'A', "cobblestone", 'B', "blockHopper", 'C', (new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemMisc"), 1, 13)), 'D', "coilAdvanced");
+        AVRecipe.AVODShapedBlock("ActuallyAdditions:blockFermentingBarrel", 0, "ABA", "ACA", "ADA", 'A', "logWood", 'B', "blockHopper", 'C', (new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemMisc"), 1, 13)), 'D', "blockWoodMachineBlock");
+        AVRecipe.AVODShapedBlock("ActuallyAdditions:blockInputter", 0, "AAA", "BCB", "AAA", 'A', "plankWood", 'B', "blockWoodMachineBlock", 'C', "blockHopper");
+
+
 
         //Battery:
         AVOreDictionary.AVODItem("itemBattery", "ActuallyAdditions:itemBattery", 0);

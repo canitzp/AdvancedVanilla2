@@ -3,7 +3,7 @@ package canitzp.advancedvanilla.compat.integrations;
 
 import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVOreDictionary;
-import canitzp.advancedvanilla.util.AVReceipe;
+import canitzp.advancedvanilla.util.AVRecipe;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 
@@ -26,8 +26,9 @@ public class MineFactroyReloaded {
 
 
         //Crafting Receips:
-        AVReceipe.AVODShapedBlock("MineFactoryReloaded:road", "A A", " B ", "A A", 'A', (new ItemStack(Block.getBlockFromName("MineFactoryReloaded:road"), 1, 0)), 'B', "poweredLamp");
+        AVRecipe.AVODShapedBlock("MineFactoryReloaded:road", 1, "A A", " B ", "A A", 'A', (new ItemStack(Block.getBlockFromName("MineFactoryReloaded:road"), 1, 0)), 'B', "poweredLamp");
 
+        //Replacement:
 
 
         AVLogger.AVinfo("Minefactory Reloaded");

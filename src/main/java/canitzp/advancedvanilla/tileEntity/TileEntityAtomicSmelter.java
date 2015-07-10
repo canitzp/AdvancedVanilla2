@@ -10,18 +10,21 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
+
+import java.util.ArrayList;
 
 
 public class TileEntityAtomicSmelter extends TileEntity implements ISidedInventory,IEnergyReceiver {
 
 
     public String name = "TileEntityAtomicSmelter";
-    public int stackLimit = 64;
-    public boolean playerUsable = true;
     public ItemStack[] slots = new ItemStack[6];
-    public EnergyStorage eStorage = new EnergyStorage(100000);
+    public EnergyStorage eStorage = new EnergyStorage(32000);
     public int workTime = 0;
 
     @Override
@@ -83,8 +86,8 @@ public class TileEntityAtomicSmelter extends TileEntity implements ISidedInvento
     }
 
     @Override
-    public ItemStack getStackInSlotOnClosing(int p_70304_1_) {
-        return null;
+    public ItemStack getStackInSlotOnClosing(int i) {
+        return this.getStackInSlot(i);
     }
 
     @Override
@@ -177,6 +180,20 @@ public class TileEntityAtomicSmelter extends TileEntity implements ISidedInvento
         super.readFromNBT(nbt);
     }
 
+    @Override
+    public Packet getDescriptionPacket()
+    {
+        NBTTagCompound tag = new NBTTagCompound();
+        this.writeToNBT(tag);
+        return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, tag);
+    }
+
+    @Override
+    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt){
+        this.readFromNBT(pkt.func_148857_g());
+    }
+
+
 
 
 
@@ -213,10 +230,17 @@ public class TileEntityAtomicSmelter extends TileEntity implements ISidedInvento
         }
     }
     public void work(){
-        ItemStack[] isarray = AtomicSmelterReceipes.getOutputsFromInput(new ItemStack[]{slots[1], slots[2], slots[3], slots[4], slots[5]});
-        for (int i = 0; i < (isarray != null ? Math.min(5, isarray.length) : 5); i++) {
-            if (isarray != null) isarray[i].stackSize = slots[0].stackSize;
-            this.slots[i + 1] = isarray != null ? isarray[i].copy() : null;
+        ArrayList<AtomicSmelterReceipes.RecipeAS> recipes = AtomicSmelterReceipes.recipes;
+        for (AtomicSmelterReceipes.RecipeAS j : recipes) {
+            ItemStack[] is = j.input;
+            for (int k = 0; k < is.length; ++k) {
+                if (slots[k + 1] != null && !slots[k + 1].isItemEqual(is[k])) {
+                    return;
+                }
+                ItemStack iss = j.output;
+                slots[0] = iss.copy();
+                slots[k + 1] = null;
+            }
         }
     }
 }

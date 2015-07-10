@@ -9,6 +9,7 @@ import canitzp.advancedvanilla.registry.ConfigRegistry;
 import canitzp.advancedvanilla.registry.ItemRegistry;
 import canitzp.advancedvanilla.registry.ReceipeRegistry;
 import canitzp.advancedvanilla.util.AVLogger;
+import canitzp.advancedvanilla.util.AVOreDictionary;
 import canitzp.advancedvanilla.util.AVStrings;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;

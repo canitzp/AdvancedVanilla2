@@ -25,7 +25,7 @@ public class ThermalExpansion {
         AVOreDictionary.AVODItem("coilAdvanced", "ThermalExpansion:material", 3);
 
         //Crafting Receipes:
-        AVReceipe.AVODShapedBlock("ThermalExpansion:capacitor", " A ", "BCB", "ADA", 'A', "dustRedstone", 'B', "ingotElectrum", 'C', "itemBattery", 'D', "gemDiamond");
+        AVRecipe.AVODShapedItem("ThermalExpansion:capacitor", 4, " A ", "BCB", "ADA", 'A', "dustRedstone", 'B', "ingotElectrum", 'C', "itemBattery", 'D', "gemDiamond");
 
         AVLogger.AVinfo("Thermal Expansion");
     }
