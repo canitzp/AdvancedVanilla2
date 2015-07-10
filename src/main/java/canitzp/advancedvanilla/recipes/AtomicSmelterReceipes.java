@@ -1,4 +1,4 @@
-package canitzp.advancedvanilla.receipes;
+package canitzp.advancedvanilla.recipes;
 
 
 import canitzp.advancedvanilla.registry.BlockRegistry;

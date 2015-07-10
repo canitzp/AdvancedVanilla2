@@ -1,12 +1,10 @@
 package canitzp.advancedvanilla.tileEntity;
 
-import canitzp.advancedvanilla.receipes.AtomicSmelterReceipes;
+import canitzp.advancedvanilla.recipes.AtomicSmelterReceipes;
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyReceiver;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.inventory.Slot;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;

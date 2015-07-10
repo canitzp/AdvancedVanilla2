@@ -9,7 +9,7 @@ public class ActuallyAdditions {
 
         //MachineBlock:
         AVOreDictionary.AVODItem("blockMachineBlockWood", "ActuallyAdditions:blockMisc", 4);
-        AVOreDictionary.AVODItem("blockMachineBlock", "ActuallyAdditions:blockMisc", 5);
+        AVOreDictionary.AVODItem("blockMachineBlockStone", "ActuallyAdditions:blockMisc", 5);
         AVOreDictionary.AVODItem("blockMachineBlockResonant", "ActuallyAdditions:blockMisc", 9);
 
         //Lamps:
