@@ -4,6 +4,9 @@ package canitzp.advancedvanilla.compat;
 import canitzp.advancedvanilla.compat.integrations.*;
 import canitzp.advancedvanilla.registry.ConfigRegistry;
 import cpw.mods.fml.common.Loader;
+import ic2.api.item.IC2Items;
+import ic2.api.recipe.ICannerBottleRecipeManager;
+import ic2.api.recipe.ICraftingRecipeManager;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -35,6 +38,9 @@ public class Integration {
 
         if(Loader.isModLoaded("Mekanism")) Mekanism.init();
         if(Loader.isModLoaded("OpenBlocks")) OpenBlocks.init();
+        if(Loader.isModLoaded("Thaumcraft")) ThaumcraftCompat.aspects();
+
+
 
 
 
