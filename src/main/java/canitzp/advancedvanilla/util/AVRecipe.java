@@ -21,7 +21,7 @@ public class AVRecipe {
     public static void AVTEPulveriser(int energy, ItemStack input, ItemStack firstOutput, ItemStack secondOutput, int secondChance){
         ThermalExpansionHelper.addPulverizerRecipe(energy, input, firstOutput, secondOutput, secondChance);
     }
-    public static void AVTEPulveriser(int energy, ItemStack input, ItemStack output,){
+    public static void AVTEPulveriser(int energy, ItemStack input, ItemStack output){
         AVTEPulveriser(energy, input, output, null, 0);
     }
 }
