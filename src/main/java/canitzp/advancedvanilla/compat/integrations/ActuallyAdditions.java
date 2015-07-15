@@ -2,7 +2,6 @@ package canitzp.advancedvanilla.compat.integrations;
 
 
 import canitzp.advancedvanilla.util.*;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 public class ActuallyAdditions {

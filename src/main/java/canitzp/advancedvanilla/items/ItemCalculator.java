@@ -12,7 +12,7 @@ public class ItemCalculator extends GenericItem {
     }
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-        if (!world.isRemote) player.openGui(AVStrings.modid, 0, world, player.serverPosX, player.serverPosY, player.serverPosZ);
+        if (!world.isRemote) player.openGui(AVStrings.modid, 0, world, (int) player.posX, (int) player.posY, (int) player.posZ);
         return stack;
     }
 }

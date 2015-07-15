@@ -8,8 +8,9 @@ import canitzp.advancedvanilla.recipes.AtomicSmelterReceipes;
 import canitzp.advancedvanilla.registry.BlockRegistry;
 import canitzp.advancedvanilla.registry.ConfigRegistry;
 import canitzp.advancedvanilla.registry.ItemRegistry;
-import canitzp.advancedvanilla.registry.ReceipeRegistry;
+import canitzp.advancedvanilla.registry.RecipeRegistry;
 import canitzp.advancedvanilla.util.AVLogger;
+import canitzp.advancedvanilla.util.AVRecipe;
 import canitzp.advancedvanilla.util.AVStrings;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -44,10 +45,10 @@ public class AdvancedVanilla {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         AVLogger.logger.info("Initialization");
-        ReceipeRegistry.ReceipeRegistryInit();
+        RecipeRegistry.ReceipeRegistryInit();
         AtomicSmelterReceipes.init();
         ActuallyAdditions.init();
-
+        AVRecipe.AVICCompressor();
         AVLogger.logger.info("Initialization completed");
     }
     @EventHandler
