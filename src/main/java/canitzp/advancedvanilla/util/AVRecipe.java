@@ -3,8 +3,12 @@ package canitzp.advancedvanilla.util;
 
 import cofh.api.modhelpers.ThermalExpansionHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
+import ic2.api.recipe.IRecipeInput;
+import ic2.api.recipe.RecipeOutput;
+import ic2.api.recipe.Recipes;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class AVRecipe {
@@ -24,4 +28,15 @@ public class AVRecipe {
     public static void AVTEPulveriser(int energy, ItemStack input, ItemStack output){
         AVTEPulveriser(energy, input, output, null, 0);
     }
+
+    public static void AVTESagmill(int energy, ItemStack input, ItemStack firstOutput, ItemStack secondOutput, int secondChance){
+        ThermalExpansionHelper.addSawmillRecipe(energy, input, firstOutput, secondOutput, secondChance);
+    }
+    public static void AVTESagmill(int energy, ItemStack input, ItemStack output){
+        AVTESagmill(energy, input, output, null, 0);
+    }
+
+
+
+
 }

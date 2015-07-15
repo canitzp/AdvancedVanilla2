@@ -26,7 +26,7 @@ public class Integration {
         OreDictionary.registerOre("blockFence", Blocks.fence);
 
         //Mods
-        if(Loader.isModLoaded("ActuallyAdditions") && ConfigRegistry.ActuallyAdditionsIntegration) ActuallyAdditions.init();
+        if(Loader.isModLoaded("ActuallyAdditions") && ConfigRegistry.ActuallyAdditionsIntegration) ActuallyAdditions.postInit();
         if(Loader.isModLoaded("appliedenergistics2") && ConfigRegistry.AE2Integration) AE2.init();
         if(Loader.isModLoaded("BuildCraft|Core") && Loader.isModLoaded("BuildCraft|Energy") && Loader.isModLoaded("BuildCraft|Builders") && Loader.isModLoaded("BuildCraft|Factory") && Loader.isModLoaded("BuildCraft|Robotics") && Loader.isModLoaded("BuildCraft|Silicon") && Loader.isModLoaded("BuildCraft|Transport") && ConfigRegistry.BuildCraftIntegration) Buildcraft.init();
         if(Loader.isModLoaded("EnderIO") && ConfigRegistry.EnderIOIntegration) EnderIO.init();

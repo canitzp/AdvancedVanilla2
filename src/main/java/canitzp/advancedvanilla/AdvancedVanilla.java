@@ -1,6 +1,7 @@
 package canitzp.advancedvanilla;
 
 import canitzp.advancedvanilla.compat.Integration;
+import canitzp.advancedvanilla.compat.integrations.ActuallyAdditions;
 import canitzp.advancedvanilla.inventory.GUIHandler;
 import canitzp.advancedvanilla.proxy.CommonProxy;
 import canitzp.advancedvanilla.recipes.AtomicSmelterReceipes;
@@ -45,7 +46,7 @@ public class AdvancedVanilla {
         AVLogger.logger.info("Initialization");
         ReceipeRegistry.ReceipeRegistryInit();
         AtomicSmelterReceipes.init();
-
+        ActuallyAdditions.init();
 
         AVLogger.logger.info("Initialization completed");
     }
