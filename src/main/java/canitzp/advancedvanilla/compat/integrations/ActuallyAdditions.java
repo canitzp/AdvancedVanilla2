@@ -17,7 +17,6 @@ public class ActuallyAdditions { //Version: ActuallyAdditions-1.7.10-0.0.7.3
 
         AVLogger.AVIML("ActuallyAdditions");
     }
-
     public static void postInit(){
         //MachineBlock:
         AVOreDictionary.AVODItem("blockMachineBlockWood", "ActuallyAdditions:blockMisc", 4);
