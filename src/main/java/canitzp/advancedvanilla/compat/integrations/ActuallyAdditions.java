@@ -2,13 +2,18 @@ package canitzp.advancedvanilla.compat.integrations;
 
 
 import canitzp.advancedvanilla.util.*;
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import thaumcraft.api.aspects.Aspect;
 
 public class ActuallyAdditions {
 
     public static void init(){
-        //InterModComm:
-        //AVInterMod.AACrusher(new ItemStack(Items.bone), new ItemStack(Items.dye, 5, 15), new ItemStack(Items.dye, 1, 15), 50);
+        //Recipe:
+        AVInterMod.AACoffeMachine(new ItemStack(Blocks.red_mushroom), 19, 10, 1, 1);
+
+        AVRecipe.AVThaumcraftAspects(new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockMisc"), 0, 4), Aspect.CLOTH, 1);
 
         AVLogger.AVIML("ActuallyAdditions");
     }
