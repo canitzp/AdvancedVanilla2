@@ -7,7 +7,7 @@ import canitzp.advancedvanilla.util.AVRecipe;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-public class IC2 {
+public class IC2 { //Version: IndustrialCraft-2-2.2.744
     public static void init(){
         //Recipes:
         AVRecipe.AVICCompressor(new ItemStack(Items.dye, 10, 15),  new ItemStack(Items.bone, 1));

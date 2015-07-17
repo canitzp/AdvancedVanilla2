@@ -5,7 +5,7 @@ import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVOreDictionary;
 
 public class EnderIO {
-    public static void init(){
+    public static void init(){ //Version: EnderIO-1.7.10-2.3.0.398_beta
         //Recipe:
     }
     public static void postInit(){//Glass:

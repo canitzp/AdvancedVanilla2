@@ -4,7 +4,7 @@ package canitzp.advancedvanilla.compat.integrations;
 import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVOreDictionary;
 
-public class OpenBlocks {
+public class OpenBlocks { //Version: OpenBlocks-1.7.10-1.4.3-snapshot-647
     public static void init(){
         //Recipe:
 

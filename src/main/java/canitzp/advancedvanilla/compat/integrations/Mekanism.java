@@ -7,7 +7,7 @@ import net.minecraft.item.crafting.CraftingManager;
 
 import java.util.List;
 
-public class Mekanism {
+public class Mekanism { //Version: Mekanism-1.7.10-8.1.5.246
     public static void init(){
         //Recipe:
 

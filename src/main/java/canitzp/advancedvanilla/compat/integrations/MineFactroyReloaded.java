@@ -7,7 +7,7 @@ import canitzp.advancedvanilla.util.AVRecipe;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 
-public class MineFactroyReloaded {
+public class MineFactroyReloaded { //Version: MineFactoryReloaded-[1.7.10]2.8.0-104
     public static void init(){
         //Recipe:
 

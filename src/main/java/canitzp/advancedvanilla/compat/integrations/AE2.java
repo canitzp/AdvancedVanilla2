@@ -5,7 +5,7 @@ import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVOreDictionary;
 
 public class AE2 {
-    public static void init(){
+    public static void init(){ //Version: AppliedEnergistics-rv2-stable-9
         //Recipe:
 
     }

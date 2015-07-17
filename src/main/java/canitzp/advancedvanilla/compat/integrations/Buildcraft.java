@@ -5,7 +5,7 @@ import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVOreDictionary;
 
 public class Buildcraft {
-    public static void init(){
+    public static void init(){ //Version: BuildCraft-7.0.13
         //Recipe:
     }
     public static void postInit(){

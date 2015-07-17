@@ -10,7 +10,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 public class Forestry {
-    public static void init(){
+    public static void init(){ //Version: Forestry_1.7.10-3-6-2-19
         //Recipes:
         AVRecipe.AVForestrySqueezer(25, new ItemStack[]{new ItemStack(Blocks.sapling, 1, 0)}, new FluidStack(FluidRegistry.getFluid("seedoil"), 250));
     }

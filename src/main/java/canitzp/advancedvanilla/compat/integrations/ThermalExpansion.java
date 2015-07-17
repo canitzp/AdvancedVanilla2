@@ -4,7 +4,7 @@ package canitzp.advancedvanilla.compat.integrations;
 import canitzp.advancedvanilla.util.*;
 
 public class ThermalExpansion {
-    public static void init(){
+    public static void init(){ //Version: ThermalExpansion-[1.7.10]4.0.1-182
         //Recipes:
     }
     public static void postInit(){

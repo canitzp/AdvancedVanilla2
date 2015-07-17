@@ -4,7 +4,7 @@ package canitzp.advancedvanilla.compat.integrations;
 import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVOreDictionary;
 
-public class ExtraUtilities {
+public class ExtraUtilities { //Version: ExtraUtilities-1.2.6
     public static void init(){
         //Recipe:
 

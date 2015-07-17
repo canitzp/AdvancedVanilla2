@@ -7,7 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import thaumcraft.api.aspects.Aspect;
 
-public class ActuallyAdditions {
+public class ActuallyAdditions { //Version: ActuallyAdditions-1.7.10-0.0.7.3
 
     public static void init(){
         //Recipe:
