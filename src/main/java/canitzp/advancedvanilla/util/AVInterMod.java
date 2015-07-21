@@ -48,6 +48,8 @@ public class AVInterMod {
 
     public static void getIMC(List<FMLInterModComms.IMCMessage> get){
         for(FMLInterModComms.IMCMessage message : get){
+
+            //ThermalExpansion:
             if(message.key.equalsIgnoreCase("ThermalExpansionPulveriser")){
                 NBTTagCompound nbt = message.getNBTValue();
                 if(nbt != null){
@@ -64,6 +66,37 @@ public class AVInterMod {
                     }
                 }
             }
+            if(message.key.equalsIgnoreCase("ThermalExpansionSagMill")){
+                NBTTagCompound nbt = message.getNBTValue();
+                if(nbt != null){
+                    int energy = nbt.getInteger("energy");
+                    ItemStack input = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("input"));
+                    ItemStack firstOutput = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("firstOutput"));
+                    ItemStack secondOutput = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("secondOutput"));
+                    int secondOutputChance = nbt.getInteger("secondOutputChance");
+                    if(energy > 0 && input != null && firstOutput != null && secondOutput == null){
+                        AVRecipe.AVTESagmill(energy, input, firstOutput);
+                    }
+                    if(energy > 0 && input != null && firstOutput != null && secondOutput != null && secondOutputChance > 0){
+                        AVRecipe.AVTESagmill(energy, input, firstOutput, secondOutput, secondOutputChance);
+                    }
+                }
+            }
+
+            //IndustrialCraft 2:
+            if(message.key.equalsIgnoreCase("IC2Compressor")){
+                NBTTagCompound nbt = message.getNBTValue();
+                if(nbt != null){
+                    ItemStack input = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("input"));
+                    ItemStack output = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("output"));
+                    if(input != null && output != null) AVRecipe.AVICCompressor(input, output);
+                }
+            }
+
+
+
+
+
         }
     }
 }
