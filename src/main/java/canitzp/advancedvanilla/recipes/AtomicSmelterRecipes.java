@@ -6,8 +6,9 @@ import canitzp.advancedvanilla.registry.ItemRegistry;
 import net.minecraft.item.ItemStack;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class AtomicSmelterReceipes {
+public class AtomicSmelterRecipes {
     public static ArrayList<RecipeAS> recipes = new ArrayList<RecipeAS>();
 
     public static void init() {
@@ -20,15 +21,15 @@ public class AtomicSmelterReceipes {
 
     public static RecipeAS getRecipeForInput(ItemStack[] input) {
         for (RecipeAS recipe : recipes) {
-            if (input != null && input.equals(recipe.input)) return recipe;
+            if (input != null && Arrays.equals(input, recipe.input)) return recipe;
         }
         return null;
     }
 
-    public static ItemStack[] getOutputsFromInput(ItemStack[] input) {
+    public static ItemStack getOutputsFromInput(ItemStack[] input) {
         RecipeAS recipe = getRecipeForInput(input);
         if (recipe != null) {
-            return new ItemStack[]{recipe.output};
+            return recipe.output;
         }
         return null;
     }

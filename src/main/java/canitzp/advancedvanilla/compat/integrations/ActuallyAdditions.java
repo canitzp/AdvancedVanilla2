@@ -11,11 +11,11 @@ public class ActuallyAdditions { //Version: ActuallyAdditions-1.7.10-0.0.7.3
 
     public static void init(){
         //Recipe:
-        AVInterMod.AACoffeMachine(new ItemStack(Blocks.red_mushroom), 19, 10, 1, 1);
+        //AVInterMod.AACoffeMachine(new ItemStack(Blocks.red_mushroom), 19, 10, 1, 1);
 
-        AVRecipe.AVThaumcraftAspects(new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockMisc"), 0, 4), Aspect.CLOTH, 1);
+        //AVRecipe.AVThaumcraftAspects(new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockMisc"), 0, 4), Aspect.CLOTH, 1);
 
-        AVLogger.AVIML("ActuallyAdditions");
+        //AVLogger.AVIML("ActuallyAdditions");
     }
     public static void postInit(){
         //MachineBlock:

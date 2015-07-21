@@ -4,6 +4,8 @@ import cpw.mods.fml.common.event.FMLInterModComms;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
+import java.util.List;
+
 public class AVInterMod {
 
     public static void AACrusher(ItemStack input, ItemStack firstOutput, ItemStack secondOutput, int secondChance){
@@ -41,5 +43,27 @@ public class AVInterMod {
         nbt.setInteger("minAmount", minAmount);
         nbt.setInteger("maxAmount", maxAmount);
         FMLInterModComms.sendMessage("ActuallyAdditions", "registerTreasureChestRecipe", nbt);
+    }
+
+
+    public static void getIMC(List<FMLInterModComms.IMCMessage> get){
+        for(FMLInterModComms.IMCMessage message : get){
+            if(message.key.equalsIgnoreCase("ThermalExpansionPulveriser")){
+                NBTTagCompound nbt = message.getNBTValue();
+                if(nbt != null){
+                    int energy = nbt.getInteger("energy");
+                    ItemStack input = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("input"));
+                    ItemStack firstOutput = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("firstOutput"));
+                    ItemStack secondOutput = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("secondOutput"));
+                    int secondOutputChance = nbt.getInteger("secondOutputChance");
+                    if(energy > 0 && input != null && firstOutput != null && secondOutput == null){
+                        AVRecipe.AVTEPulveriser(energy, input, firstOutput);
+                    }
+                    if(energy > 0 && input != null && firstOutput != null && secondOutput != null && secondOutputChance > 0){
+                        AVRecipe.AVTEPulveriser(energy, input, firstOutput, secondOutput, secondOutputChance);
+                    }
+                }
+            }
+        }
     }
 }

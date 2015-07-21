@@ -1,24 +1,25 @@
 package canitzp.advancedvanilla;
 
 import canitzp.advancedvanilla.compat.Integration;
-import canitzp.advancedvanilla.compat.integrations.ActuallyAdditions;
-import canitzp.advancedvanilla.compat.integrations.Forestry;
 import canitzp.advancedvanilla.inventory.GUIHandler;
 import canitzp.advancedvanilla.proxy.CommonProxy;
-import canitzp.advancedvanilla.recipes.AtomicSmelterReceipes;
+import canitzp.advancedvanilla.recipes.AtomicSmelterRecipes;
 import canitzp.advancedvanilla.registry.BlockRegistry;
 import canitzp.advancedvanilla.registry.ConfigRegistry;
 import canitzp.advancedvanilla.registry.ItemRegistry;
 import canitzp.advancedvanilla.registry.RecipeRegistry;
+import canitzp.advancedvanilla.util.AVInterMod;
 import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVStrings;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import net.minecraft.nbt.NBTTagCompound;
 
 @Mod(modid = AVStrings.modid, version = AVStrings.version, name = AVStrings.name)
 
@@ -44,7 +45,7 @@ public class AdvancedVanilla {
     public void init(FMLInitializationEvent event) {
         AVLogger.logger.info("Initialization");
         RecipeRegistry.init();
-        AtomicSmelterReceipes.init();
+        AtomicSmelterRecipes.init();
         Integration.init();
         AVLogger.logger.info("Initialization completed");
     }
@@ -53,6 +54,10 @@ public class AdvancedVanilla {
         AVLogger.logger.info("PostInitialization");
         Integration.postInit();
         AVLogger.logger.info("Loading " + AVStrings.name + " has completed!");
+    }
+    @EventHandler
+    public void onIMCRecived(FMLInterModComms.IMCEvent event){
+        AVInterMod.getIMC(event.getMessages());
     }
 
 

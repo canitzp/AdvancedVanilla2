@@ -5,7 +5,6 @@ import canitzp.advancedvanilla.tileEntity.TileEntityAtomicSmelter;
 import canitzp.advancedvanilla.util.AVStrings;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 

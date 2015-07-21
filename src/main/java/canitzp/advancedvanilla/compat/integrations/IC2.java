@@ -4,8 +4,10 @@ package canitzp.advancedvanilla.compat.integrations;
 import canitzp.advancedvanilla.util.AVLogger;
 import canitzp.advancedvanilla.util.AVOreDictionary;
 import canitzp.advancedvanilla.util.AVRecipe;
+import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.ShapedRecipes;
 
 public class IC2 { //Version: IndustrialCraft-2-2.2.744
     public static void init(){
