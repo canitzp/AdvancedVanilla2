@@ -7,6 +7,7 @@ public class AVGameRegistry {
     public static void BlockGameRegistry(){
 
         if(ConfigRegistry.AtomicSmelter) GameRegistry.registerBlock(BlockRegistry.blockAtomicSmelter, "AtomicSmelter");
+
     }
 
     public static void ItemGameRegistry(){

@@ -2,10 +2,19 @@ package canitzp.advancedvanilla.compat.integrations;
 
 
 import canitzp.advancedvanilla.util.*;
+import cpw.mods.fml.common.event.FMLInterModComms;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+
 public class ThermalExpansion {
     public static void init(){ //Version: ThermalExpansion-[1.7.10]4.0.1-182
         //Recipes:
-
+        NBTTagCompound nbt = new NBTTagCompound();
+        nbt.setInteger("energy", 5000);
+        nbt.setTag("input", new ItemStack(Blocks.daylight_detector).writeToNBT(new NBTTagCompound()));
+        nbt.setTag("firstOutput", new ItemStack(Blocks.daylight_detector).writeToNBT(new NBTTagCompound()));
+        FMLInterModComms.sendMessage("advancedvanilla", "ThermalExpansionPulveriser", nbt);
     }
     public static void postInit(){
         //Flux Capacitor:

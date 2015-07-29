@@ -1,6 +1,7 @@
 package canitzp.advancedvanilla;
 
 import canitzp.advancedvanilla.compat.Integration;
+import canitzp.advancedvanilla.compat.multiMod.AVModpack;
 import canitzp.advancedvanilla.inventory.GUIHandler;
 import canitzp.advancedvanilla.proxy.CommonProxy;
 import canitzp.advancedvanilla.recipes.AtomicSmelterRecipes;
@@ -20,6 +21,8 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.nbt.NBTTagCompound;
+
+import java.io.IOException;
 
 @Mod(modid = AVStrings.modid, version = AVStrings.version, name = AVStrings.name)
 
@@ -42,11 +45,12 @@ public class AdvancedVanilla {
         AVLogger.logger.info("PreInitialization completed");
     }
     @EventHandler
-    public void init(FMLInitializationEvent event) {
+    public void init(FMLInitializationEvent event) throws IOException {
         AVLogger.logger.info("Initialization");
         RecipeRegistry.init();
         AtomicSmelterRecipes.init();
         Integration.init();
+        AVModpack.init();
         AVLogger.logger.info("Initialization completed");
     }
     @EventHandler

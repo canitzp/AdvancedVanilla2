@@ -14,8 +14,8 @@ public class AVLogger {
         moduleLogger.info("Loaded " + input + " Integration Module successfully!");
     }
 
-    public static void AVIML(String string){
-        interModLogger.info("Successfully Loaded InterModCommunication with " + string);
+    public static void AVIMC(String string){
+        interModLogger.info(string);
     }
 
 
