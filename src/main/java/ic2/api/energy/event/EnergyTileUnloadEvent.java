@@ -17,7 +17,7 @@ import ic2.api.energy.tile.IEnergyTile;
  * your own energy grid implementation if you need to. It's not required if you
  * always lookup energy paths on demand.
  * 
- * See ic2/api/energy/usage.txt for an overall description of the energy net api.
+ * See ic2/cofh.api/energy/usage.txt for an overall description of the energy net cofh.api.
  */
 public class EnergyTileUnloadEvent extends EnergyTileEvent {
 	public EnergyTileUnloadEvent(IEnergyTile energyTile1) {

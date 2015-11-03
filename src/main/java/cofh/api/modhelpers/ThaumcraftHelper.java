@@ -31,12 +31,12 @@ public class ThaumcraftHelper {
 			if (!ModAPIManager.INSTANCE.hasAPI("Thaumcraft|API")) {
 				break l;
 			}
-			Class<?> Aspect = Class.forName("thaumcraft.api.aspects.Aspect");
+			Class<?> Aspect = Class.forName("thaumcraft.cofh.api.aspects.Aspect");
 			aspects = (Map<String, ? extends Object>) Aspect.getDeclaredField("aspects").get(null);
-			Class<?> ThaumcraftApi = Class.forName("thaumcraft.api.ThaumcraftApi");
-			AspectList = Class.forName("thaumcraft.api.aspects.AspectList");
+			Class<?> ThaumcraftApi = Class.forName("thaumcraft.cofh.api.ThaumcraftApi");
+			AspectList = Class.forName("thaumcraft.cofh.api.aspects.AspectList");
 			registerItem = ThaumcraftApi.getDeclaredMethod("registerObjectTag", ItemStack.class, AspectList);
-			Class<?> EntityTagsNBT = Class.forName("[Lthaumcraft.api.ThaumcraftApi$EntityTagsNBT;");
+			Class<?> EntityTagsNBT = Class.forName("[Lthaumcraft.cofh.api.ThaumcraftApi$EntityTagsNBT;");
 			registerEntity = ThaumcraftApi.getDeclaredMethod("registerEntityTag", String.class, AspectList, EntityTagsNBT);
 			addAspect = AspectList.getDeclaredMethod("add", Aspect, int.class);
 			newAspectList = AspectList.getDeclaredConstructor(ItemStack.class);

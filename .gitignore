@@ -1,12 +1,16 @@
+/idea
+/1.7.10 AdvancedVanilla2.iml
+/Logo.png
+/1.7.10 AdvancedVanilla2.ipr
+/forge-1.7.10-10.13.4.1448-1.7.10-changelog.txt
+/AdvancedVanilla.png
 /.gradle
+/README.txt
+/classes
 /build
-/eclipse
-/out
-/1.7.10 AdvancedVanilla.iml
-/1.7.10 AdvancedVanilla.ipr
-/1.7.10 AdvancedVanilla.iws
-/lib
-/build.bat
-
-gradlew
-gradlew.bat
+/LICENSE-fml.txt
+/MinecraftForge-Credits.txt
+/CREDITS-fml.txt
+/MinecraftForge-License.txt
+/1.7.10 AdvancedVanilla2.iws
+# Created by .ignore support plugin (hsz.mobi)

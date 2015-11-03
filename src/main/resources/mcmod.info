@@ -1,14 +1,14 @@
 [
 {
-  "modid": "advancedvanilla",
-  "name": "AdvancedVanilla",
-  "description": "This Mod is in developement. \nThis Mod adds a lot of Ore Dictionary Entries and Crafting Receipes for the best Mod compatibility.",
+  "modid": "AdvancedVanilla2",
+  "name": "AdvancedVanilla2",
+  "description": "This Mod creates compatibility between Mods.\nThis is Version 2 and not compatible with the older Edition.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "https://github.com/canitzp/AdvancedVanilla",
+  "url": "",
   "updateUrl": "",
   "authorList": ["canitzp"],
-  "credits": "Minecraft Forge, Mojang, Ellpeck, all Mod Authors for them works!",
+  "credits": "The Forge and FML Team, Mojang, canitzp",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

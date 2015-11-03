@@ -10,7 +10,7 @@ import net.minecraftforge.common.util.ForgeDirection;
  * @author King Lemming
  *
  */
-public class TileEnergyHandler extends TileEntity implements IEnergyHandler {
+public class TileEnergyHandler extends TileEntity implements cofh.api.energy.IEnergyHandler {
 
 	protected EnergyStorage storage = new EnergyStorage(32000);
 

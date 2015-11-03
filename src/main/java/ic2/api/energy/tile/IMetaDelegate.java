@@ -20,7 +20,7 @@ import net.minecraft.tileentity.TileEntity;
  * IEnergyEmitter) and mandatory position (x, y, z, World) data.
  * If the connectivity data on the sub tile is missing, the meta delegate is queried instead.
  * 
- * See ic2/api/energy/usage.txt for an overall description of the energy net api.
+ * See ic2/cofh.api/energy/usage.txt for an overall description of the energy net cofh.api.
  */
 public interface IMetaDelegate extends IEnergyTile {
 	/**

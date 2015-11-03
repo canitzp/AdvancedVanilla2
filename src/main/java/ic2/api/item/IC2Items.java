@@ -587,7 +587,7 @@ public final class IC2Items {
 		if (pkg != null) {
 			String packageName = pkg.getName();
 
-			return packageName.substring(0, packageName.length() - ".api.item".length());
+			return packageName.substring(0, packageName.length() - ".cofh.api.item".length());
 		}
 
 		return "ic2";

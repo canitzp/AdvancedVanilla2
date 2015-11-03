@@ -3,7 +3,7 @@ package ic2.api.recipe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-public interface IMachineRecipeManagerExt extends IMachineRecipeManager {
+public interface IMachineRecipeManagerExt extends ic2.api.recipe.IMachineRecipeManager {
 	/**
 	 * Adds a recipe to the machine.
 	 *
@@ -18,5 +18,5 @@ public interface IMachineRecipeManagerExt extends IMachineRecipeManager {
 	 * For the thermal centrifuge   @param metadata meta data {"minHeat": 1-xxx}
 	 * For the ore washing plant  @param metadata meta data  {"amount": 1-8000}
 	 */
-	public boolean addRecipe(IRecipeInput input, NBTTagCompound metadata, boolean overwrite, ItemStack... outputs);
+	public boolean addRecipe(ic2.api.recipe.IRecipeInput input, NBTTagCompound metadata, boolean overwrite, ItemStack... outputs);
 }

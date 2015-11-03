@@ -3,7 +3,7 @@ package ic2.api.energy.tile;
 /**
  * Allows a tile entity (mostly a generator) to emit energy.
  * 
- * See ic2/api/energy/usage.txt for an overall description of the energy net api.
+ * See ic2/cofh.api/energy/usage.txt for an overall description of the energy net cofh.api.
  */
 public interface IEnergySource extends IEnergyEmitter {
 	/**
