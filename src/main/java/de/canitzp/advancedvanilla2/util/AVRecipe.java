@@ -50,8 +50,6 @@ public class AVRecipe {
         AVTEPulveriser(energy, input, output, null, 0);
     }
 
-
-
     public static void AVTESagmill(int energy, ItemStack input, ItemStack firstOutput, ItemStack secondOutput, int secondChance){
         NBTTagCompound nbt = new NBTTagCompound();
         nbt.setInteger("energy", energy);
@@ -63,8 +61,6 @@ public class AVRecipe {
     public static void AVTESagmill(int energy, ItemStack input, ItemStack output){
         AVTESagmill(energy, input, output, null, 0);
     }
-
-
 
 
     //IndustrialCraft 2:
@@ -116,7 +112,7 @@ public class AVRecipe {
         FMLInterModComms.sendMessage("mekanism", "EnrichmentChamberRecipe", nbt);
     }
 
-
+    /*
     public static void AACrusher(ItemStack input, ItemStack firstOutput, ItemStack secondOutput, int secondChance){
         NBTTagCompound nbt = new NBTTagCompound();
         nbt.setTag("input", input.writeToNBT(new NBTTagCompound()));
@@ -153,6 +149,7 @@ public class AVRecipe {
         nbt.setInteger("maxAmount", maxAmount);
         FMLInterModComms.sendMessage("ActuallyAdditions", "registerTreasureChestRecipe", nbt);
     }
+    */
 
 
 
