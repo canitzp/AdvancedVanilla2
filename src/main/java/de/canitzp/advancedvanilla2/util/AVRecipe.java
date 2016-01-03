@@ -27,6 +27,7 @@ import java.util.List;
 public class AVRecipe {
     //Vanilla:
     public static void AVODShapedBlock(String block, int meta,  Object... params){
+        CraftingManager.getInstance().getRecipeList().remove(new ShapedOreRecipe(new ItemStack(Block.getBlockFromName(block), 1, meta), params));
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Block.getBlockFromName(block), 1, meta), params));
     }
 

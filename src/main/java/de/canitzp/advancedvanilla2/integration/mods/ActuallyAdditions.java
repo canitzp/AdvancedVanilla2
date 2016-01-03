@@ -1,13 +1,27 @@
 package de.canitzp.advancedvanilla2.integration.mods;
 
 import de.canitzp.advancedvanilla2.integration.CheckLoadedMods;
+import de.canitzp.advancedvanilla2.integration.IMod;
+import de.canitzp.advancedvanilla2.util.AVConfig;
 import de.canitzp.advancedvanilla2.util.AVItem;
 import de.canitzp.advancedvanilla2.util.AVOreDictionary;
 import de.canitzp.advancedvanilla2.util.AVRecipe;
+import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 
+import java.io.*;
+
 @SuppressWarnings("unchecked")
-public class ActuallyAdditions { //Version: ActuallyAdditions-1.7.10-r2
+public class ActuallyAdditions implements IMod{ //Version: ActuallyAdditions-1.7.10-r16
+
+    public static void preInit() {}
+
+    public static void init(){}
+
+    public static void configChanger() {
+        //AVConfig.configChanger("ActuallyAdditions.cfg", "B:\"Black Quartz\"=true", "B:\"Black Quartz\"=false");
+        //AVConfig.configChanger("ActuallyAdditions.cfg", "B:\"Black Lotus Gen\"=true", "B:\"Black Lotus Gen\"=false");
+    }
 
     public static void postInit(){
         CheckLoadedMods.modList.add("ActuallyAdditions");
