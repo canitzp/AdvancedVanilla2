@@ -22,7 +22,7 @@ public class MineFactroyReloaded { //Version: MineFactoryReloaded-[1.7.10]2.8.0-
         AVOreDictionary.WildcardBlock("logWood", "MineFactoryReloaded:rubberwood.log");
         AVOreDictionary.WildcardBlock("treeLeaves", "MineFactoryReloaded:rubberwood.leaves");
         //Crafting Recipes:
-        AVRecipe.AVODShapedBlock("MineFactoryReloaded:road", 4, new Object[]{"A A", " B ", "A A", 'A', (new ItemStack(Block.getBlockFromName("MineFactoryReloaded:road"), 1, 0)), 'B', "poweredLamp"}, new Object[]{"A A", " B ", "A A", 'A', (new ItemStack(Block.getBlockFromName("MineFactoryReloaded:road"), 1, 0)), 'B', "poweredLamp"});
+        AVRecipe.AVODShapedBlock("MineFactoryReloaded:road", new Object[]{"A A", " B ", "A A", 'A', (new ItemStack(Block.getBlockFromName("MineFactoryReloaded:road"), 1, 0)), 'B', "poweredLamp"}, new Object[]{"A A", " B ", "A A", 'A', (new ItemStack(Block.getBlockFromName("MineFactoryReloaded:road"), 1, 0)), 'B', "poweredLamp"});
 
     }
 }

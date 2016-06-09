@@ -1,16 +1,21 @@
 package de.canitzp.advancedvanilla.integration;
 
+import net.minecraftforge.fml.common.ModContainer;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
 /**
  * @author canitzp
  */
 public interface IMod {
 
-    static void preInit(){}
+    default String getModName(){return null;}
 
-    static void init(){}
+    default void preInit(FMLPreInitializationEvent event){}
 
-    static void configChanger(){}
+    default void init(FMLInitializationEvent event){}
 
-    static void postInit(){}
+    default void postInit(FMLPostInitializationEvent event){}
 
 }

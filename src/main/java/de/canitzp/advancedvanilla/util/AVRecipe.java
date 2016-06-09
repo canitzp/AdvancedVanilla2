@@ -1,7 +1,10 @@
 package de.canitzp.advancedvanilla.util;
 
+import de.canitzp.advancedvanilla.recipechanger.RecipeHandler;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
@@ -19,25 +22,45 @@ import java.util.List;
 
 public class AVRecipe {
 
+    private static boolean isItemBlockEqual(ItemBlock input1, ItemBlock input2){
+        return input1.getRegistryName().equals(input2.getRegistryName());
+    }
+    private static boolean isRecipeInputEqual(Object[] recipe1, Object[] recipe2){
+        for (int i = 0; i < recipe1.length; i++) {
+            Object obj = recipe1[i];
+            if (!(obj == recipe2[i]) && (obj instanceof ItemStack && !(((ItemStack) obj).isItemEqual((ItemStack) recipe2[i])))){
+                return false;
+            }
+        }
+        return true;
+    }
+
     //Vanilla:
-    public static void AVODShapedBlock(String block, int meta,  Object[] paramsOld, Object[] paramsNew){
+    public static void AVODShapedBlock(String block, int amount, int meta,  Object[] paramsOld, Object[] paramsNew){
         if(paramsOld != null){
+            List<IRecipe> recipeList = CraftingManager.getInstance().getRecipeList();
             List<IRecipe> toRemove = new ArrayList<>(), toAdd = new ArrayList<>();
-            for (Object rec : CraftingManager.getInstance().getRecipeList()){
+            for (IRecipe rec : recipeList){
                 if(rec instanceof ShapedOreRecipe){
-                    if(((ShapedOreRecipe) rec).getRecipeOutput().getItem() == Item.getItemFromBlock(Block.getBlockFromName(block))){
-                        if(Arrays.equals(((ShapedOreRecipe) rec).getInput(), paramsOld)){
-                            toRemove.add((IRecipe) rec);
-                            toAdd.add(new ShapedOreRecipe(Block.getBlockFromName(block), paramsNew));
+                    if(rec.getRecipeOutput().getItem() instanceof ItemBlock){
+                        if(isItemBlockEqual((ItemBlock) rec.getRecipeOutput().getItem(), (ItemBlock) Item.getItemFromBlock(Block.getBlockFromName(block)))){
+                            if(isRecipeInputEqual(((ShapedOreRecipe) rec).getInput(), new ShapedOreRecipe((Block) null, paramsOld).getInput())){
+                                toRemove.add(rec);
+                                break;
+                            }
                         }
                     }
                 }
             }
             CraftingManager.getInstance().getRecipeList().removeAll(toRemove);
-            CraftingManager.getInstance().getRecipeList().addAll(toAdd);
-            return;
         }
-        GameRegistry.addRecipe(new ShapedOreRecipe(Block.getBlockFromName(block), paramsNew));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Block.getBlockFromName(block), amount, meta), paramsNew));
+    }
+    public static void AVODShapedBlock(String block, Object[] paramsOld, Object[] paramsNew){
+        AVODShapedBlock(block, 1, 0, paramsOld, paramsNew);
+    }
+    public static void AVODShapedBlock(String block, Object[] params){
+        AVODShapedBlock(block, null, params);
     }
 
     public static void AVODShapedItem(String item, int meta,  Object... params){

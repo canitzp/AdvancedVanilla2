@@ -1,62 +1,67 @@
 package de.canitzp.advancedvanilla.integration.mods;
 
 import de.canitzp.advancedvanilla.integration.CheckLoadedMods;
+import de.canitzp.advancedvanilla.integration.IMod;
 import de.canitzp.advancedvanilla.util.AVOreDictionary;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 
 @SuppressWarnings("unchecked")
-public class Vanilla { //Version: Minecraft 1.7.10
+public class Vanilla implements IMod{ //Version: Minecraft 1.7.10
 
-    public static void postInit(){
-        CheckLoadedMods.modList.add("Vanilla");
-        AVOreDictionary.AVODBlock("blockChiseledQuartz", Blocks.quartz_block, 1);
-        AVOreDictionary.AVODBlock("blockPillarQuartz", Blocks.quartz_block, 2);
-        AVOreDictionary.AVODBlock("blockBricks", Blocks.brick_block);
-        AVOreDictionary.AVODItem("bucketLava", Items.lava_bucket);
-        AVOreDictionary.AVODItem("bucketWater", Items.water_bucket);
-        AVOreDictionary.AVODItem("bucket", Items.bucket);
-        AVOreDictionary.AVODBlock("poweredLamp", Blocks.redstone_lamp);
-        AVOreDictionary.AVODBlock("blockSponge", Blocks.sponge);
-        AVOreDictionary.AVODBlock("blockGrass", Blocks.grass);
-        AVOreDictionary.AVODBlock("blockFence", Blocks.oak_fence);
-        AVOreDictionary.AVODBlock("blockFence", Blocks.birch_fence);
-        AVOreDictionary.AVODBlock("blockFence", Blocks.spruce_fence);
-        AVOreDictionary.AVODBlock("blockFence", Blocks.jungle_fence);
-        AVOreDictionary.AVODBlock("blockFence", Blocks.acacia_fence);
-        AVOreDictionary.AVODBlock("blockFence", Blocks.dark_oak_fence);
-        AVOreDictionary.AVODItem("itemBook", Items.book);
-        AVOreDictionary.WildcardItem("itemBook", Items.enchanted_book);
-        AVOreDictionary.WildcardBlock("carpet", Blocks.carpet);
+    @Override
+    public String getModName(){
+        return "Vanilla";
+    }
+
+    public void postInit(){
+        AVOreDictionary.AVODBlock("blockChiseledQuartz", Blocks.QUARTZ_BLOCK, 1);
+        AVOreDictionary.AVODBlock("blockPillarQuartz", Blocks.QUARTZ_BLOCK, 2);
+        AVOreDictionary.AVODBlock("blockBricks", Blocks.BRICK_BLOCK);
+        AVOreDictionary.AVODItem("bucketLava", Items.LAVA_BUCKET);
+        AVOreDictionary.AVODItem("bucketWater", Items.WATER_BUCKET);
+        AVOreDictionary.AVODItem("bucket", Items.BUCKET);
+        AVOreDictionary.AVODBlock("poweredLamp", Blocks.REDSTONE_LAMP);
+        AVOreDictionary.AVODBlock("blockSponge", Blocks.SPONGE);
+        AVOreDictionary.AVODBlock("blockGrass", Blocks.GRASS);
+        AVOreDictionary.AVODBlock("blockFence", Blocks.OAK_FENCE);
+        AVOreDictionary.AVODBlock("blockFence", Blocks.BIRCH_FENCE);
+        AVOreDictionary.AVODBlock("blockFence", Blocks.SPRUCE_FENCE);
+        AVOreDictionary.AVODBlock("blockFence", Blocks.JUNGLE_FENCE);
+        AVOreDictionary.AVODBlock("blockFence", Blocks.ACACIA_FENCE);
+        AVOreDictionary.AVODBlock("blockFence", Blocks.DARK_OAK_FENCE);
+        AVOreDictionary.AVODItem("itemBook", Items.BOOK);
+        AVOreDictionary.WildcardItem("itemBook", Items.ENCHANTED_BOOK);
+        AVOreDictionary.WildcardBlock("carpet", Blocks.CARPET);
         //Food:
-        AVOreDictionary.AVODItem("foodApple", Items.apple);
-        AVOreDictionary.AVODItem("foodMushroomStew", Items.mushroom_stew);
-        AVOreDictionary.AVODItem("foodBread", Items.bread);
-        AVOreDictionary.AVODItem("foodPorkchopRaw", Items.porkchop);
-        AVOreDictionary.AVODItem("foodPorkchopCocked", Items.cooked_porkchop);
-        AVOreDictionary.AVODItem("foodAppleGold", Items.golden_apple);
-        AVOreDictionary.AVODItem("foodAppleEnchanted", Items.golden_apple, 1);
-        AVOreDictionary.AVODItem("foodFishRaw", Items.fish);
-        AVOreDictionary.AVODItem("foodSalomonRaw", Items.fish, 1);
-        AVOreDictionary.AVODItem("foodClownfish", Items.fish, 2);
-        AVOreDictionary.AVODItem("foodPufferfish", Items.fish, 3);
-        AVOreDictionary.AVODItem("foodFishCocked", Items.cooked_fish);
-        AVOreDictionary.AVODItem("foodSalomonCocked", Items.cooked_fish, 1);
-        AVOreDictionary.AVODItem("foodCake", Items.cake);
-        AVOreDictionary.AVODItem("foodCookie", Items.cookie);
-        AVOreDictionary.AVODItem("foodMelon", Items.melon);
-        AVOreDictionary.AVODItem("foodBeefRaw", Items.beef);
-        AVOreDictionary.AVODItem("foodBeefCocked", Items.cooked_beef);
-        AVOreDictionary.AVODItem("foodChickenRaw", Items.chicken);
-        AVOreDictionary.AVODItem("foodChickenCocked", Items.cooked_chicken);
-        AVOreDictionary.AVODItem("foodRottenFlesh", Items.rotten_flesh);
-        AVOreDictionary.AVODItem("foodSpiderEye", Items.spider_eye);
-        AVOreDictionary.AVODItem("foodCarrot", Items.carrot);
-        AVOreDictionary.AVODItem("foodPotato", Items.potato);
-        AVOreDictionary.AVODItem("foodPotatoCocked", Items.baked_potato);
-        AVOreDictionary.AVODItem("foodPotatoPoisoned", Items.poisonous_potato);
-        AVOreDictionary.AVODItem("foodCarrotGolden", Items.golden_carrot);
-        AVOreDictionary.AVODItem("foodPiePumpkin", Items.pumpkin_pie);
+        AVOreDictionary.AVODItem("foodApple", Items.APPLE);
+        AVOreDictionary.AVODItem("foodMushroomStew", Items.MUSHROOM_STEW);
+        AVOreDictionary.AVODItem("foodBread", Items.BREAD);
+        AVOreDictionary.AVODItem("foodPorkchopRaw", Items.PORKCHOP);
+        AVOreDictionary.AVODItem("foodPorkchopCocked", Items.COOKED_PORKCHOP);
+        AVOreDictionary.AVODItem("foodAppleGold", Items.GOLDEN_APPLE);
+        AVOreDictionary.AVODItem("foodAppleEnchanted", Items.GOLDEN_APPLE, 1);
+        AVOreDictionary.AVODItem("foodFishRaw", Items.FISH);
+        AVOreDictionary.AVODItem("foodSalomonRaw", Items.FISH, 1);
+        AVOreDictionary.AVODItem("foodClownfish", Items.FISH, 2);
+        AVOreDictionary.AVODItem("foodPufferfish", Items.FISH, 3);
+        AVOreDictionary.AVODItem("foodFishCocked", Items.COOKED_FISH);
+        AVOreDictionary.AVODItem("foodSalomonCocked", Items.COOKED_FISH, 1);
+        AVOreDictionary.AVODItem("foodCake", Items.CAKE);
+        AVOreDictionary.AVODItem("foodCookie", Items.COOKIE);
+        AVOreDictionary.AVODItem("foodMelon", Items.MELON);
+        AVOreDictionary.AVODItem("foodBeefRaw", Items.BEEF);
+        AVOreDictionary.AVODItem("foodBeefCocked", Items.COOKED_BEEF);
+        AVOreDictionary.AVODItem("foodChickenRaw", Items.CHICKEN);
+        AVOreDictionary.AVODItem("foodChickenCocked", Items.COOKED_CHICKEN);
+        AVOreDictionary.AVODItem("foodRottenFlesh", Items.ROTTEN_FLESH);
+        AVOreDictionary.AVODItem("foodSpiderEye", Items.SPIDER_EYE);
+        AVOreDictionary.AVODItem("foodCarrot", Items.CARROT);
+        AVOreDictionary.AVODItem("foodPotato", Items.POTATO);
+        AVOreDictionary.AVODItem("foodPotatoCocked", Items.BAKED_POTATO);
+        AVOreDictionary.AVODItem("foodPotatoPoisoned", Items.POISONOUS_POTATO);
+        AVOreDictionary.AVODItem("foodCarrotGolden", Items.GOLDEN_CARROT);
+        AVOreDictionary.AVODItem("foodPiePumpkin", Items.PUMPKIN_PIE);
     }
 
 }

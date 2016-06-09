@@ -2,6 +2,7 @@ package de.canitzp.advancedvanilla.integration.mods;
 
 import de.canitzp.advancedvanilla.integration.CheckLoadedMods;
 import de.canitzp.advancedvanilla.integration.IMod;
+import de.canitzp.advancedvanilla.util.AVItem;
 import de.canitzp.advancedvanilla.util.AVOreDictionary;
 import de.canitzp.advancedvanilla.util.AVRecipe;
 import net.minecraft.block.Block;
@@ -9,19 +10,14 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 
 @SuppressWarnings("unchecked")
-public class ActuallyAdditions implements IMod{ //Version: ActuallyAdditions-1.7.10-r16
+public class ActuallyAdditions implements IMod{ //Version: ActuallyAdditions-1.9-r30
 
-    public static void preInit() {}
-
-    public static void init(){}
-
-    public static void configChanger() {
-        //AVConfig.configChanger("ActuallyAdditions.cfg", "B:\"Black Quartz\"=true", "B:\"Black Quartz\"=false");
-        //AVConfig.configChanger("ActuallyAdditions.cfg", "B:\"Black Lotus Gen\"=true", "B:\"Black Lotus Gen\"=false");
+    @Override
+    public String getModName(){
+        return "ActuallyAdditions";
     }
 
-    public static void postInit(){
-        CheckLoadedMods.modList.add("ActuallyAdditions");
+    public void postInit(){
         //MachineBlock:
         AVOreDictionary.AVODItem("blockMachineBlockWood", "ActuallyAdditions:blockMisc", 4);
         AVOreDictionary.AVODItem("blockMachineBlockStone", "ActuallyAdditions:blockMisc", 5);
@@ -34,10 +30,10 @@ public class ActuallyAdditions implements IMod{ //Version: ActuallyAdditions-1.7
         AVOreDictionary.AVODItem("coilBasic", "ActuallyAdditions:itemMisc", 7);
         AVOreDictionary.AVODItem("coilAdvanced", "ActuallyAdditions:itemMisc", 8);
         //Crafting Recipes:
-        AVRecipe.AVODShapedBlock("ActuallyAdditions:blockCompost", 0, new Object[]{"A A", "A A", "ABA", 'A', "plankWood", 'B', new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockMisc"), 4)}, new Object[]{"A A", "A A", "ABA", 'A', "plankWood", 'B', "blockWoodMachineBlock"});
-        //AVRecipe.AVODShapedBlock("ActuallyAdditions:blockCanolaPress", 0, "ABA", "ACA", "ADA", 'A', "cobblestone", 'B', "blockHopper", 'C', (new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemMisc"), 1, 13)), 'D', "coilAdvanced");
-        //AVRecipe.AVODShapedBlock("ActuallyAdditions:blockFermentingBarrel", 0, "ABA", "ACA", "ADA", 'A', "logWood", 'B', "blockHopper", 'C', (new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemMisc"), 1, 13)), 'D', "blockWoodMachineBlock");
-        //AVRecipe.AVODShapedBlock("ActuallyAdditions:blockInputter", 0, "AAA", "BCB", "AAA", 'A', "plankWood", 'B', "blockWoodMachineBlock", 'C', "blockHopper");
+        AVRecipe.AVODShapedBlock("ActuallyAdditions:blockCompost", new Object[]{"A A", "A A", "ABA", 'A', "plankWood", 'B', new ItemStack(Block.getBlockFromName("ActuallyAdditions:blockMisc"), 1, 4)}, new Object[]{"A A", "A A", "ABA", 'A', "plankWood", 'B', "blockMachineBlockWood"});
+        AVRecipe.AVODShapedBlock("ActuallyAdditions:blockCanolaPress", new Object[]{}, new Object[]{ "ABA", "ACA", "ADA", 'A', "cobblestone", 'B', "blockHopper", 'C', (new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemMisc"), 1, 13)), 'D', "coilAdvanced"});
+        AVRecipe.AVODShapedBlock("ActuallyAdditions:blockFermentingBarrel", new Object[]{}, new Object[]{ "ABA", "ACA", "ADA", 'A', "logWood", 'B', "blockHopper", 'C', (new ItemStack(AVItem.getItemFromName("ActuallyAdditions:itemMisc"), 1, 13)), 'D', "blockWoodMachineBlock"});
+        AVRecipe.AVODShapedBlock("ActuallyAdditions:blockInputter", new Object[]{ "AAA", "BCB", "AAA", 'A', "plankWood", 'B', "blockWoodMachineBlock", 'C', "blockHopper"});
         //Battery:
         AVOreDictionary.AVODItem("itemBattery", "ActuallyAdditions:itemBattery");
         AVOreDictionary.AVODItem("itemBatteryTier2", "ActuallyAdditions:itemBatteryDouble");
@@ -76,7 +72,6 @@ public class ActuallyAdditions implements IMod{ //Version: ActuallyAdditions-1.7
         AVOreDictionary.AVODItem("foodBreadRice", "ActuallyAdditions:itemFood", 17);
         AVOreDictionary.AVODItem("foodDoughnut", "ActuallyAdditions:itemFood", 18);
         AVOreDictionary.AVODItem("foodToastChocolate", "ActuallyAdditions:itemFood", 19);
-
     }
 
 }

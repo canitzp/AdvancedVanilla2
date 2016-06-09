@@ -7,12 +7,12 @@ import net.minecraft.util.ResourceLocation;
 public class AVItem{
     public static Item getItemFromName(String name) {
         ResourceLocation loc = new ResourceLocation(name);
-        if (Item.itemRegistry.containsKey(loc)) {
-            return (Item)Item.itemRegistry.getObject(loc);
+        if (Item.REGISTRY.containsKey(loc)) {
+            return (Item)Item.REGISTRY.getObject(loc);
         }
         else {
             try {
-                return (Item)Item.itemRegistry.getObjectById(Integer.parseInt(name));
+                return (Item)Item.REGISTRY.getObjectById(Integer.parseInt(name));
             }
             catch (NumberFormatException numberformatexception) {
                 return null;
